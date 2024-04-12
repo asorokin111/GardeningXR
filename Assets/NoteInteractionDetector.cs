@@ -14,7 +14,6 @@ public class NoteInteractionDetector: MonoBehaviour
 
     [SerializeField]
     private NewControls _inputActions;
-    private Collider _collider;
 
     private Collider _boardCollider;
 
@@ -27,15 +26,17 @@ public class NoteInteractionDetector: MonoBehaviour
         _inputActions.Interactions.Enable();
 
         _grabInteractable = GetComponent<XRGrabInteractable>();
-        _collider = GetComponent<Collider>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("CorkBoard"))
         {
-            _boardCollider = other;
-            _grabInteractable.selectExited.AddListener(Snap);
+            if (other.TryGetComponent<CorkBoard>(out var corkBoard))
+            {
+                _boardCollider = corkBoard.Collider;
+                _grabInteractable.selectExited.AddListener(Snap);
+            }
         }
     }
     private void OnTriggerExit(Collider other)
