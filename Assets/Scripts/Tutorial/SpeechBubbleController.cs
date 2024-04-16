@@ -13,7 +13,7 @@ public class SpeechBubbleController : MonoBehaviour
 
     private void Start()
     {
-        transform.position = _defaultPosition;
+        transform.position = _defaultPosition.position;
     }
     private void Update()
     {
@@ -25,6 +25,7 @@ public class SpeechBubbleController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        transform.LookAt(_targetToFace.position);  // Rotate towards target 
+       transform.LookAt(_targetToFace.position);  // Rotate towards target 
+
     }
 }
