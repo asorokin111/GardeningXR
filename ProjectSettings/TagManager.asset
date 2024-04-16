@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TaskNote
   - CorkBoard
+  - Grass
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Grass
   - 
   - 
   - 
