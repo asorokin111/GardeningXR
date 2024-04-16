@@ -42,8 +42,8 @@ namespace Gardening
             GetComponent<Collider>().enabled = false;
 
             //Vector3 averageOfPoints = GetAverageOfContactPoints(other.contacts);
-            //transform.SetParent(other.transform, true);
             //transform.SetPositionAndRotation(averageOfPoints, Quaternion.FromToRotation(transform.up, -other.GetContact(0).normal));
+            transform.SetParent(other.transform, true);
             transform.rotation = Quaternion.FromToRotation(transform.up, -other.GetContact(0).normal);
 
             _isAnchored = true;
