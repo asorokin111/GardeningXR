@@ -9,6 +9,7 @@ TagManager:
   - Grass
   - Sponge
   - IngameButton
+  - Dirt
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Grass
   - Hand
   - FlowerPot
-  - 
+  - Packet
   - 
   - 
   - 
