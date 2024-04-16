@@ -7,27 +7,23 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class BasicSurroundingsInitialiser : MonoBehaviour
 {
-    public LayerMask grassLayer;
     public XRRayInteractor interactor;
     public ARAnchorManager anchorManager;
     public GameObject prefab;
-    public InputActionReference uhu;
-
-    public Mesh mesh;
-    public Material material;
+    public InputActionReference inputAction;
 
     private bool _hasBeenSpawned = false;
 
     private void OnEnable()
     {
-        uhu.action.performed += ReenableDraw;
-        uhu.action.canceled += ReenableDraw;
+        inputAction.action.performed += ReenableDraw;
+        inputAction.action.canceled += ReenableDraw;
     }
 
     private void OnDisable()
     {
-        uhu.action.performed -= ReenableDraw;
-        uhu.action.canceled -= ReenableDraw;
+        inputAction.action.performed -= ReenableDraw;
+        inputAction.action.canceled -= ReenableDraw;
     }
 
     private void ReenableDraw(InputAction.CallbackContext ctx)
@@ -50,6 +46,8 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
         if (!success) return;
 
-        Instantiate(prefab, anchor.pose.position, anchor.pose.rotation);
+        Instantiate(prefab, anchor.pose.position, Quaternion.identity);
+
+        _hasBeenSpawned = true;
     }
 }
