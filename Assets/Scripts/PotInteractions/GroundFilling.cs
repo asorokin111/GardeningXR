@@ -73,7 +73,7 @@ namespace Gardening
         }
 
         private void SetUpGroundTransform() => _startGroundTransform = groundTransform.localScale;
-        private void SetUpPotHeight() => _potHeight = upperBound.localPosition.y - lowerBound.localPosition.y;
+        private void SetUpPotHeight() => _potHeight = upperBound.localPosition.z - lowerBound.localPosition.z;
         private void SetUpRadius() => _radiusDiff = endRadius - startRadius;
 
         private void StartFillCoroutine()
