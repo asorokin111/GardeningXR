@@ -15,8 +15,6 @@ namespace Gardening
         [SerializeField] private int _growthTime;
         [SerializeField] private float _refreshRate;
 
-        private Transform _flowerTransform;
-
         private List<Material> _growMaterials = new List<Material>();
 
         private bool _isGrown;
@@ -28,8 +26,6 @@ namespace Gardening
         /// </summary>
         public void PlantThePlant()
         {
-            _flowerTransform = GetComponent<Transform>();
-
             _growMaterials = GetFlowerGrowMaterials(_meshRenderer);
             foreach (Material mat in _growMaterials)
             {
@@ -60,7 +56,7 @@ namespace Gardening
             IsCurrentlyGrowing = true;
 
             index++;
-            Debug.Log(index);    // Index to track how often courutine is being called
+            //Debug.Log(index);    // Index to track how often coroutine is being called
 
             float currentValue = material.GetFloat("Grow_");
             while (!_isGrown)
@@ -84,12 +80,10 @@ namespace Gardening
         private List<Material> GetFlowerGrowMaterials(MeshRenderer flower)
         {
             var materials = new List<Material>();
-            for (int i = 0; i < flower.materials.Length; i++)
+            foreach (var mat in flower.materials)
             {
-                if (flower.materials[i].HasFloat("Grow_"))
-                {
-                    materials.Add(flower.materials[i]);
-                }
+                if (!mat.HasFloat("Grow_")) continue;
+                materials.Add(mat);
             }
             return materials;
         }

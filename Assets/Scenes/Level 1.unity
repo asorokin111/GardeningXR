@@ -475,7 +475,7 @@ PrefabInstance:
         type: 3}
       propertyPath: associatedPlant
       value: 
-      objectReference: {fileID: 21004773637329128, guid: 08a131ca622fbd346865c9e08d3ccf37,
+      objectReference: {fileID: 1738111979526771802, guid: 58e04910e621e3a4cb94c3250f8f2b5d,
         type: 3}
     - target: {fileID: 2667019627935801373, guid: 7588d35ea9910f345928be2a167cb8af,
         type: 3}
