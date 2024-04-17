@@ -18,7 +18,6 @@ namespace Gardening
         private List<Material> _growMaterials = new List<Material>();
 
         private bool _isGrown;
-        private int index = 0;
 
 
         /// <summary>
@@ -54,9 +53,6 @@ namespace Gardening
         IEnumerator GrowMaterial(Material material)
         {
             IsCurrentlyGrowing = true;
-
-            index++;
-            //Debug.Log(index);    // Index to track how often coroutine is being called
 
             float currentValue = material.GetFloat("Grow_");
             while (!_isGrown)
