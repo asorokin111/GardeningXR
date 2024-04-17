@@ -140,27 +140,15 @@ namespace Gardening
             return hasTopLimitBeenReached || hadBottomLimitBeenReached;
         }
 
-        private bool IsReachedTopBoundary()
-        {
-            bool isReachedTopBoundary
-                = groundTransform.localPosition.y > upperBound.localPosition.y;
+        private bool IsReachedTopBoundary() => groundTransform.position.y > upperBound.position.y;
 
-            return isReachedTopBoundary;
-        }
+        private bool IsReachedBottomBoundary() => groundTransform.position.y < lowerBound.position.y;
 
-        private bool IsReachedBottomBoundary()
-        {
-            bool isReachedBottomBoundary
-                = groundTransform.localPosition.y < lowerBound.localPosition.y;
-
-            return isReachedBottomBoundary;
-        }
-
-        private void IsFilledUp(bool isFilled) => this.isFilled = isFilled;
+        private void IsFilledUp(bool isFilled) => this.isFilled = isFilled; // WTF???
 
         private void MoveDirt()
         {
-            groundTransform.localPosition += Vector3.up * (stepSize * _direction);
+            groundTransform.localPosition += Vector3.forward * (stepSize * _direction);
         }
 
         private void AdjustRadius()
@@ -170,8 +158,10 @@ namespace Gardening
             ApplyScale(scale);
         }
 
-        private float CalculateCurrentHeight() => groundTransform.localPosition.y - lowerBound.localPosition.y;
-        private float CalculateScale(float currentHeight) => startRadius + _radiusDiff * currentHeight / _potHeight;
+        private float CalculateCurrentHeight() => groundTransform.localPosition.z - lowerBound.localPosition.z;
+
+        // Math.Max here to prevent division by zero
+        private float CalculateScale(float currentHeight) => startRadius + _radiusDiff * currentHeight / Math.Max(_potHeight, 0.01f);
 
         private void ApplyScale(float targetScale)
         {
