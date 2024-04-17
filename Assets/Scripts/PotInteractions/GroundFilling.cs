@@ -30,6 +30,12 @@ namespace Gardening
             SetUp();
         }
 
+        public enum GroundFillingMode
+        {
+            Fill,
+            TakeOut
+        }
+
         /// <summary>
         /// Set mode to "Fill" or "Take out"
         /// </summary>

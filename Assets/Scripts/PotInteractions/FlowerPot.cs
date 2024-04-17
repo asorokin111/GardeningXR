@@ -28,16 +28,11 @@ namespace Gardening
                 }
             }
 
-            if (plant != null)
+            if (plant == null || !plant.IsCurrentlyGrowing) return;
+            _timePlantGrowthInactive += Time.deltaTime;
+            if (_timePlantGrowthInactive > 0.2f)
             {
-                if (plant.IsCurrentlyGrowing)
-                {
-                    _timePlantGrowthInactive += Time.deltaTime;
-                    if (_timePlantGrowthInactive > 0.2f)
-                    {
-                        plant.StopPlantGrowth();
-                    }
-                }
+                plant.StopPlantGrowth();
             }
         }
 
@@ -63,20 +58,16 @@ namespace Gardening
                     plant.PlantThePlant();
                     plant.transform.parent = transform;
                     _isSeedPlanted = true;
-                    Debug.Log("The seed is planted");
                 }
             }
 
             if (!_isSeedPlanted)
                 return;
 
-            if (other.tag == "Water")
+            if (other.CompareTag("Water") && !plant.IsCurrentlyGrowing)
             {
-                if (!plant.IsCurrentlyGrowing)
-                {
-                    _timePlantGrowthInactive = 0f;
-                    plant.StartPlantGrowth();
-                }
+                _timePlantGrowthInactive = 0f;
+                plant.StartPlantGrowth();
             }
         }
     }
