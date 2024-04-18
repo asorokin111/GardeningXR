@@ -729,22 +729,22 @@ PrefabInstance:
     - target: {fileID: 6286864747979108936, guid: 882e996055fbde24896c0ffc4e94b557,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.45659637
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6286864747979108936, guid: 882e996055fbde24896c0ffc4e94b557,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.45659637
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6286864747979108936, guid: 882e996055fbde24896c0ffc4e94b557,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5399257
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6286864747979108936, guid: 882e996055fbde24896c0ffc4e94b557,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5399257
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6286864747979108936, guid: 882e996055fbde24896c0ffc4e94b557,
         type: 3}
@@ -759,12 +759,17 @@ PrefabInstance:
     - target: {fileID: 6286864747979108936, guid: 882e996055fbde24896c0ffc4e94b557,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 99.56
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6662159211331856626, guid: 882e996055fbde24896c0ffc4e94b557,
         type: 3}
       propertyPath: m_Name
       value: wateringcan
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662159211331856626, guid: 882e996055fbde24896c0ffc4e94b557,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
