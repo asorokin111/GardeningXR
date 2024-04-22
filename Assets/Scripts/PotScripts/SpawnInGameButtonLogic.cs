@@ -7,6 +7,6 @@ public class SpawnInGameButtonLogic : MonoBehaviour, IIngameButtonLogic
 
     public void TriggerAction()
     {
-        Instantiate(prefab, _placeToSpawn.position, Quaternion.identity);
+        Instantiate(prefab, _placeToSpawn.position, prefab.transform.rotation);
     }
 }
