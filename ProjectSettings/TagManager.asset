@@ -12,6 +12,7 @@ TagManager:
   - Dirt
   - Seed
   - Water
+  - Trimmer
   layers:
   - Default
   - TransparentFX
