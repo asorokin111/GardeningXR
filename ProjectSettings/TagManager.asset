@@ -4,7 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - TaskNote
+  - CorkBoard
+  - Grass
   - Sponge
+  - IngameButton
+  - Dirt
+  - Seed
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -12,11 +19,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grass
+  - Hand
+  - FlowerPot
+  - Packet
+  - WateringCan
   - 
   - 
   - 
