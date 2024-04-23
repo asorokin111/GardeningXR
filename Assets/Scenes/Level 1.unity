@@ -870,6 +870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial Text
       objectReference: {fileID: 0}
+    - target: {fileID: 2702024654277211600, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3323362807529931267, guid: 46ed5c5e0a6363b4698149ca7252ab23,
         type: 3}
       propertyPath: m_Name
@@ -880,10 +885,166 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4103393974512604776, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4643610417921836128, guid: 46ed5c5e0a6363b4698149ca7252ab23,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[0].text
+      value: "Hei siell\xE4! M\xE4 oon Rock!... Jep, olen kivi, mutta olen my\xF6s
+        puutarhuri!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[1].text
+      value: "Okei. Rehellisesti sanottuna en my\xF6sk\xE4\xE4n ole kovin kummoinen
+        puutarhuri, mutta tied\xE4n asioita!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[2].text
+      value: "Olen oppaasi t\xE4ll\xE4 hyvin kiinnostavalla alalla!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[3].text
+      value: "Voit ottaa esineisiin k\xE4ytt\xE4m\xE4ll\xE4 kontrollereita."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[4].text
+      value: Ensiksi sinun on otettava pussi multaa.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[5].text
+      value: "Hyv\xE4\xE4 ty\xF6t\xE4! Nyt voit laittaa multaa ruukkuun, reunaan
+        asti."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[6].text
+      value: 'Olet luonnonlahjakkuus... Okei, nyt voit istuttaa joitakin kasveja.
+        siemenpakkausten avulla. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[7].text
+      value: "Ja t\xE4rkein osa - kastelu! Kastele kasvia, kunnes se on kasvanut
+        t\xE4yteen!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[8].text
+      value: "Ja t\xE4rkein osa - kastelu! Kastele kasvia, kunnes se on kasvanut
+        t\xE4yteen!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[9].text
+      value: Vesipisaroita, vesipisaroita...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[10].text
+      value: "Vau! Katsokaa tuota! Ensimm\xE4inen kasvisi!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[11].text
+      value: "Voit halutessasi kasvattaa lis\xE4\xE4!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[3].isFillerText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[4].isFillerText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[5].isFillerText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[9].isFillerText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[10].isFillerText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[11].isFillerText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[1].phraseTypingDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[2].phraseTypingDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[4].phraseTypingDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[5].phraseTypingDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[6].phraseTypingDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[7].phraseTypingDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[8].phraseTypingDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[9].phraseTypingDuration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[10].phraseTypingDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665180446940430189, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[11].phraseTypingDuration
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5091497390926691477, guid: 46ed5c5e0a6363b4698149ca7252ab23,
         type: 3}
@@ -959,6 +1120,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.1053573
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196976145474310268, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196976145474310268, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196976145474310268, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196976145474310268, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7741791828489293419, guid: 46ed5c5e0a6363b4698149ca7252ab23,
         type: 3}

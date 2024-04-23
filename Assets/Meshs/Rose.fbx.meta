@@ -3,7 +3,17 @@ guid: 4c144fe85cbfc8a42a26d186b24fda60
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Artifical plastic stem
+    second: {fileID: 2100000, guid: 952ff0a030a0bb84daf05ace3385d297, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: top
+    second: {fileID: 2100000, guid: fc336d64199f9254db2a71fef694a04b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
