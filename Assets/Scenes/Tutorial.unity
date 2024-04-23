@@ -465,17 +465,17 @@ PrefabInstance:
     - target: {fileID: 8378041023373249324, guid: 9666a9549f9918947bbe058b2de1af26,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.766
+      value: -0.926
       objectReference: {fileID: 0}
     - target: {fileID: 8378041023373249324, guid: 9666a9549f9918947bbe058b2de1af26,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.77
+      value: 1.026
       objectReference: {fileID: 0}
     - target: {fileID: 8378041023373249324, guid: 9666a9549f9918947bbe058b2de1af26,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.168
       objectReference: {fileID: 0}
     - target: {fileID: 8378041023373249324, guid: 9666a9549f9918947bbe058b2de1af26,
         type: 3}
@@ -654,6 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e470c18464c9f49a54b86b1b2ce178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playOnStart: 1
   _text: {fileID: 1808610030}
   _tutorialPhrasesList:
   - text: Hei

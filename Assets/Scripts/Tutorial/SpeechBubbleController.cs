@@ -11,7 +11,7 @@ public class SpeechBubbleController : MonoBehaviour
 
     private const float _moveFrequency = 1.2f;
     private const float _moveOffset = 0.0f;
-    private const float _moveDistance = 0.2f;
+    private const float _moveDistance = 0.1f;
 
     private void Start()
     {

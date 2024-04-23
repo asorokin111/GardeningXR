@@ -8,6 +8,9 @@ namespace Gardening
     {
         public bool IsCurrentlyGrowing { get; private set; }
 
+        public delegate void PlantGrownAction();
+        public static PlantGrownAction OnPlantGrown;
+
         [SerializeField] private MeshRenderer _meshRenderer;
         [SerializeField] private float _minGrowValue;
         [SerializeField] private float _maxGrowValue;
@@ -72,6 +75,7 @@ namespace Gardening
 
                 yield return new WaitForSeconds(_refreshRate);
             }
+            OnPlantGrown?.Invoke();
         }
         private List<Material> GetFlowerGrowMaterials(MeshRenderer flower)
         {

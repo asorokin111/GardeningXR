@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class SceneTutorial : MonoBehaviour
 {
+    public static SceneTutorial instance;
+
+    public bool playOnStart;
+
     [Header("UI")]
     [SerializeField]
     private TMP_Text _text;
@@ -21,6 +25,18 @@ public class SceneTutorial : MonoBehaviour
 
     private bool _isInitialized = false;
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
     private void Start()
     {
         if (_isInitialized) return;
@@ -31,26 +47,33 @@ public class SceneTutorial : MonoBehaviour
         }
 
         _isInitialized = true;
-        _waitNextPhrase = new WaitForSeconds(_timeUntilNextPhrase);
-        StartCoroutine(PlayTutorial());
+        if (playOnStart)
+        {
+            _waitNextPhrase = new WaitForSeconds(_timeUntilNextPhrase);
+            StartCoroutine(PlayTutorial());
+        }
     }
 
-    IEnumerator PlayTutorial()
+    private IEnumerator PlayTutorial()
     {
         int phrasesCount = _tutorialPhrases.Count;
         for (int i = 0; i < phrasesCount; i++)
         {
-            TutorialPhrase nextPhrase = _tutorialPhrases.Dequeue();
-            _text.text = "";
-            WaitForSeconds waitUntilNextChar = new WaitForSeconds(nextPhrase.phraseTypingDuration / nextPhrase.text.Length);
-
-            foreach (char c in nextPhrase.text)
-            {
-                yield return waitUntilNextChar;
-                _text.text += c;
-            }
+            StartCoroutine(PrintNextPhrase());
 
             yield return _waitNextPhrase;
+        }
+    }
+
+    public IEnumerator PrintNextPhrase()
+    {
+        var nextPhrase = _tutorialPhrases.Dequeue();
+        _text.text = "";
+        var waitUntilNextChar = new WaitForSeconds(nextPhrase.phraseTypingDuration / nextPhrase.text.Length);
+        foreach (char c in nextPhrase.text)
+        {
+            yield return waitUntilNextChar;
+            _text.text += c;
         }
     }
 }

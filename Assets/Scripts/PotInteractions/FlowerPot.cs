@@ -5,6 +5,10 @@ namespace Gardening
     public class FlowerPot : MonoBehaviour
     {
         public Plant plant { get; private set; }
+
+        public delegate void SeedPlantedAction();
+        public static SeedPlantedAction OnSeedPlanted;
+
         [SerializeField] private Transform _plantRootsPosition;
         private bool _isSeedPlanted = false;
 
@@ -58,6 +62,7 @@ namespace Gardening
                     plant.PlantThePlant();
                     plant.transform.parent = transform;
                     _isSeedPlanted = true;
+                    OnSeedPlanted?.Invoke();
                 }
             }
 
