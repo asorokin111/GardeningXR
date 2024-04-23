@@ -33,6 +33,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: ee635bb6635f4ed44a2a09825d7f0f12, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Metallic:
+        m_Texture: {fileID: 2800000, guid: f3fb518ec70eb4047b1c6ec34933fbce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _NormalMap:
         m_Texture: {fileID: 2800000, guid: b5e60e83f7d6bd8409b426c40b1c2358, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -51,7 +55,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Grow_: 0.602
+    - Grow_: 1
     - _AlphaClipping: 1
     - _Metallic: -0.74
     - _QueueControl: 0

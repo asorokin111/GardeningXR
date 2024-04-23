@@ -3,22 +3,7 @@ guid: 88f62cfd014cc754998b11d103322ad2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Plastic Glossy Bumpy
-    second: {fileID: 2100000, guid: 35f023c70ec5de1448ff47a7b1700ac6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: code
-    second: {fileID: 2100000, guid: afd96e208513d69498de1304b3dbb91c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: logo
-    second: {fileID: 2100000, guid: 5415b6d5756ffc24a99845d92a62546a, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
