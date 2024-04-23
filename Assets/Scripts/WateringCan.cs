@@ -8,6 +8,8 @@ public sealed class WateringCan : ParticleDropper
 
     private XRGrabInteractable _interactable;
 
+    private bool _alreadyPickedUp = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -16,7 +18,11 @@ public sealed class WateringCan : ParticleDropper
 
     private void OnEnable()
     {
-        _interactable.firstSelectEntered.AddListener((SelectEnterEventArgs _) => OnWateringCanFirstPickedUp?.Invoke());
+        _interactable.firstSelectEntered.AddListener((SelectEnterEventArgs _) => {
+            if (_alreadyPickedUp) return;
+            OnWateringCanFirstPickedUp?.Invoke();
+            _alreadyPickedUp = false;
+        });
     }
 
     private void OnDisable()

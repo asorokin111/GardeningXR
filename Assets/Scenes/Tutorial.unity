@@ -450,7 +450,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1442387025}
     m_Modifications:
     - target: {fileID: 3468592062325428892, guid: 9666a9549f9918947bbe058b2de1af26,
         type: 3}
@@ -485,7 +485,7 @@ PrefabInstance:
     - target: {fileID: 8378041023373249324, guid: 9666a9549f9918947bbe058b2de1af26,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8378041023373249324, guid: 9666a9549f9918947bbe058b2de1af26,
         type: 3}
@@ -495,7 +495,7 @@ PrefabInstance:
     - target: {fileID: 8378041023373249324, guid: 9666a9549f9918947bbe058b2de1af26,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8378041023373249324, guid: 9666a9549f9918947bbe058b2de1af26,
         type: 3}
@@ -625,6 +625,12 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1442387025 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5558639823973323423, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+    type: 3}
+  m_PrefabInstance: {fileID: 1730845552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1478855425
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1478855427}
   - component: {fileID: 1478855426}
+  - component: {fileID: 1478855428}
   m_Layer: 0
   m_Name: SceneTutorial
   m_TagString: Untagged
@@ -654,12 +661,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e470c18464c9f49a54b86b1b2ce178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playOnStart: 1
+  playOnStart: 0
+  isCurrentlyPrintingPhrase: 0
   _text: {fileID: 1808610030}
   _tutorialPhrasesList:
-  - text: Hei
+  - text: "Initial \xE4\xE4\xE4\xE4\xE4\xE4\xE4\xE4"
+    phraseTypingDuration: 2
+  - text: Test1
     phraseTypingDuration: 1
-  - text: Test
+  - text: Test2
+    phraseTypingDuration: 1
+  - text: Test3
+    phraseTypingDuration: 1
+  - text: Test4
+    phraseTypingDuration: 1
+  - text: Test5
+    phraseTypingDuration: 1
+  - text: Test6
     phraseTypingDuration: 1
   _timeUntilNextPhrase: 5
 --- !u!4 &1478855427
@@ -677,6 +695,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1478855428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478855425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b592abe8abb8245bcadcc013f03940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1487687797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8378041023373249324, guid: 9666a9549f9918947bbe058b2de1af26,
@@ -944,7 +974,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5558639823973323423, guid: 46ed5c5e0a6363b4698149ca7252ab23,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1487687797}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46ed5c5e0a6363b4698149ca7252ab23, type: 3}
 --- !u!114 &1808610030 stripped
@@ -1158,5 +1192,4 @@ SceneRoots:
   - {fileID: 1965298780}
   - {fileID: 526512674}
   - {fileID: 1730845552}
-  - {fileID: 911564297}
   - {fileID: 1478855427}

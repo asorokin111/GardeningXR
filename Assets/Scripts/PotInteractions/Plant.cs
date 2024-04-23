@@ -64,6 +64,7 @@ namespace Gardening
                 if (currentValue >= _maxGrowValue)
                 {
                     _isGrown = true;
+                    OnPlantGrown?.Invoke();
                     material.SetFloat("Grow_", _maxGrowValue);
                     yield break;
                 }
@@ -75,7 +76,6 @@ namespace Gardening
 
                 yield return new WaitForSeconds(_refreshRate);
             }
-            OnPlantGrown?.Invoke();
         }
         private List<Material> GetFlowerGrowMaterials(MeshRenderer flower)
         {

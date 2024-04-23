@@ -44,6 +44,7 @@ public class LevelOneTutorialTriggers : MonoBehaviour
 
     private void SoilBagPickedUpEventHandler()
     {
+        //NextPhrase();
         CheckStateAndPrintNext((int)TutorialStates.SoilBagPickedUp - 1);
     }
 

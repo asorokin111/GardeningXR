@@ -6,6 +6,7 @@ public class DirtPacket : ParticleDropper
 {
     public delegate void DirtPacketPickUpAction();
     public static DirtPacketPickUpAction OnDirtPacketFirstPickedUp;
+    private bool _alreadyPickedUp = false;
 
     private XRGrabInteractable _interactable;
     protected override bool CheckTilt()
@@ -25,7 +26,11 @@ public class DirtPacket : ParticleDropper
 
     private void OnEnable()
     {
-        _interactable.firstSelectEntered.AddListener((SelectEnterEventArgs _) => OnDirtPacketFirstPickedUp?.Invoke());
+        _interactable.firstSelectEntered.AddListener((SelectEnterEventArgs _) => {
+            if (_alreadyPickedUp) return;
+            OnDirtPacketFirstPickedUp?.Invoke();
+            _alreadyPickedUp = true;
+        });
     }
 
     private void OnDisable()

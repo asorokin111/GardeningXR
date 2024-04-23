@@ -24,6 +24,7 @@ public class SceneTutorial : MonoBehaviour
     private WaitForSeconds _waitNextPhrase;
 
     private bool _isInitialized = false;
+    private bool _isCurrentlyPrintingPhrase = false;
 
     private void Awake()
     {
@@ -52,6 +53,10 @@ public class SceneTutorial : MonoBehaviour
             _waitNextPhrase = new WaitForSeconds(_timeUntilNextPhrase);
             StartCoroutine(PlayTutorial());
         }
+        else
+        {
+            StartCoroutine(PrintNextPhrase()); // Print the initial text
+        }
     }
 
     private IEnumerator PlayTutorial()
@@ -67,6 +72,11 @@ public class SceneTutorial : MonoBehaviour
 
     public IEnumerator PrintNextPhrase()
     {
+        if (_isCurrentlyPrintingPhrase)
+        {
+            yield return null;
+        }
+        _isCurrentlyPrintingPhrase = true;
         var nextPhrase = _tutorialPhrases.Dequeue();
         _text.text = "";
         var waitUntilNextChar = new WaitForSeconds(nextPhrase.phraseTypingDuration / nextPhrase.text.Length);
@@ -75,5 +85,6 @@ public class SceneTutorial : MonoBehaviour
             yield return waitUntilNextChar;
             _text.text += c;
         }
+        _isCurrentlyPrintingPhrase = false;
     }
 }

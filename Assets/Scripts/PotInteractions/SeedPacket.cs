@@ -13,6 +13,8 @@ namespace Gardening
 
         private XRGrabInteractable _interactable;
 
+        private bool _alreadyPickedUp = false;
+
         /// <summary>
         /// Checks if the seed packet's rotation is suitable for dropping seeds
         /// </summary>
@@ -33,7 +35,11 @@ namespace Gardening
 
         private void OnEnable()
         {
-            _interactable.firstSelectEntered.AddListener((SelectEnterEventArgs _) => OnSeedPacketFirstPickedUp?.Invoke());
+            _interactable.firstSelectEntered.AddListener((SelectEnterEventArgs _) => {
+                if (_alreadyPickedUp) return;
+                OnSeedPacketFirstPickedUp?.Invoke();
+                _alreadyPickedUp = true;
+            });
         }
 
         private void OnDisable()
