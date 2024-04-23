@@ -145,13 +145,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.unity.mobile.android-logcat": {
-      "version": "1.4.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.nuget.mono-cecil": {
       "version": "1.11.4",
       "depth": 4,
@@ -337,6 +330,13 @@
         "com.unity.xr.core-utils": "2.1.1"
       },
       "url": "https://packages.unity.com"
+    },
+    "nrjwolf.games.attachattributes": {
+      "version": "https://github.com/Nrjwolf/unity-auto-attach-component-attributes.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "719b0afa8a1abd8765d71d6ce1cce7b97718bc59"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
