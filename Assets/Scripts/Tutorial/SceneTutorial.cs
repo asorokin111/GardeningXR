@@ -57,9 +57,9 @@ public class SceneTutorial : MonoBehaviour
 
     private IEnumerator PrintFillerPhrases()
     {
-        while (_tutorialPhrases.Peek().isFillerText)
+        while (true)
         {
-            if (!_isCurrentlyPrintingPhrase)
+            if (!_isCurrentlyPrintingPhrase && _tutorialPhrases.Peek().isFillerText)
             {
                 StartCoroutine(PrintNextPhrase());
             }

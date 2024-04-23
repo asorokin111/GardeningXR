@@ -680,7 +680,7 @@ MonoBehaviour:
     isFillerText: 0
   - text: Test5
     phraseTypingDuration: 1
-    isFillerText: 0
+    isFillerText: 1
   - text: Test6
     phraseTypingDuration: 1
     isFillerText: 0
