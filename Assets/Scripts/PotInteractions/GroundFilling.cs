@@ -6,6 +6,9 @@ namespace Gardening
 {
     public class GroundFilling : MonoBehaviour
     {
+        public delegate void PotFilledAction();
+        public static PotFilledAction OnPotFilled;
+
         public bool isFilled = false;
         public bool isCurrentlyFilling = false;
 
@@ -122,11 +125,11 @@ namespace Gardening
 
             if (IsReachedTopBoundary())
             {
-                IsFilledUp(true);
+                SetFilled(true);
             }
             else
             {
-                IsFilledUp(false);
+                SetFilled(false);
             }
         }
 
@@ -150,7 +153,12 @@ namespace Gardening
 
         private bool IsReachedBottomBoundary() => groundTransform.position.y < lowerBound.position.y;
 
-        private void IsFilledUp(bool isFilled) => this.isFilled = isFilled; // WTF???
+        private void SetFilled(bool isFilled)
+        {
+            this.isFilled = isFilled; // WTF???
+            if (!this.isFilled) return;
+            OnPotFilled?.Invoke();
+        }
 
         private void MoveDirt()
         {

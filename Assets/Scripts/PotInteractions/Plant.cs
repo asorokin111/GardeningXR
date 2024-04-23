@@ -8,6 +8,9 @@ namespace Gardening
     {
         public bool IsCurrentlyGrowing { get; private set; }
 
+        public delegate void PlantGrownAction();
+        public static PlantGrownAction OnPlantGrown;
+
         [SerializeField] private MeshRenderer _meshRenderer;
         [SerializeField] private float _minGrowValue;
         [SerializeField] private float _maxGrowValue;
@@ -61,6 +64,7 @@ namespace Gardening
                 if (currentValue >= _maxGrowValue)
                 {
                     _isGrown = true;
+                    OnPlantGrown?.Invoke();
                     material.SetFloat("Grow_", _maxGrowValue);
                     yield break;
                 }

@@ -8,6 +8,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5368658398066792336, guid: a5d281715c893a14b9525c242513e189,
+        type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: a69a92dc3b03b704baa853877a47ece5, type: 3}
+    - target: {fileID: -5368658398066792336, guid: a5d281715c893a14b9525c242513e189,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3705652705939394075, guid: 46a1dbee44604c8478d7597b564a8290,
+        type: 2}
+    - target: {fileID: 689364837859565213, guid: a5d281715c893a14b9525c242513e189,
+        type: 3}
+      propertyPath: associatedPlant
+      value: 
+      objectReference: {fileID: 1376823427721123064, guid: c2a3051b5a061b24b938c2960e9b9b73,
+        type: 3}
     - target: {fileID: 7428769426005285272, guid: a5d281715c893a14b9525c242513e189,
         type: 3}
       propertyPath: m_Name
