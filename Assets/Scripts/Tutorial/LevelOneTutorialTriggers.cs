@@ -18,11 +18,6 @@ public class LevelOneTutorialTriggers : MonoBehaviour
 
     private void OnEnable()
     {
-        if (SceneTutorial.instance.playOnStart)
-        {
-            Debug.LogWarning("PlayOnStart enabled for tutorial in a scene with tutorial triggers. Disabling triggers");
-            return;
-        }
         WateringCan.OnWateringCanFirstPickedUp += WateringCanPickedUpEventHandler;
         DirtPacket.OnDirtPacketFirstPickedUp += SoilBagPickedUpEventHandler;
         GroundFilling.OnPotFilled += PotFilledEventHandler;
@@ -33,7 +28,6 @@ public class LevelOneTutorialTriggers : MonoBehaviour
 
     private void OnDisable()
     {
-        if (SceneTutorial.instance.playOnStart) return;
         Plant.OnPlantGrown -= PlantGrownEventHandler;
         SeedPacket.OnSeedPacketFirstPickedUp -= SeedBagPickedUpEventHandler;
         FlowerPot.OnSeedPlanted -= SeedPlantedEventHandler;

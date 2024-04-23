@@ -7,8 +7,6 @@ public class SceneTutorial : MonoBehaviour
 {
     public static SceneTutorial instance;
 
-    public bool playOnStart;
-
     [Header("UI")]
     [SerializeField]
     private TMP_Text _text;
@@ -48,24 +46,23 @@ public class SceneTutorial : MonoBehaviour
         }
 
         _isInitialized = true;
-        if (playOnStart)
-        {
-            _waitNextPhrase = new WaitForSeconds(_timeUntilNextPhrase);
-            StartCoroutine(PlayTutorial());
-        }
-        else
-        {
-            StartCoroutine(PrintNextPhrase()); // Print the initial text
-        }
+        _waitNextPhrase = new WaitForSeconds(_timeUntilNextPhrase);
+        PlayTutorial();
     }
 
-    private IEnumerator PlayTutorial()
+    private void PlayTutorial()
     {
-        int phrasesCount = _tutorialPhrases.Count;
-        for (int i = 0; i < phrasesCount; i++)
-        {
-            StartCoroutine(PrintNextPhrase());
+        StartCoroutine(PrintFillerPhrases());
+    }
 
+    private IEnumerator PrintFillerPhrases()
+    {
+        while (_tutorialPhrases.Peek().isFillerText)
+        {
+            if (!_isCurrentlyPrintingPhrase)
+            {
+                StartCoroutine(PrintNextPhrase());
+            }
             yield return _waitNextPhrase;
         }
     }

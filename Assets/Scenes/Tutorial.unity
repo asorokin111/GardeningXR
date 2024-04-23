@@ -661,24 +661,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e470c18464c9f49a54b86b1b2ce178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playOnStart: 0
-  isCurrentlyPrintingPhrase: 0
   _text: {fileID: 1808610030}
   _tutorialPhrasesList:
   - text: "Initial \xE4\xE4\xE4\xE4\xE4\xE4\xE4\xE4"
     phraseTypingDuration: 2
+    isFillerText: 1
   - text: Test1
     phraseTypingDuration: 1
+    isFillerText: 1
   - text: Test2
     phraseTypingDuration: 1
+    isFillerText: 1
   - text: Test3
     phraseTypingDuration: 1
+    isFillerText: 0
   - text: Test4
     phraseTypingDuration: 1
+    isFillerText: 0
   - text: Test5
     phraseTypingDuration: 1
+    isFillerText: 0
   - text: Test6
     phraseTypingDuration: 1
+    isFillerText: 0
   _timeUntilNextPhrase: 5
 --- !u!4 &1478855427
 Transform:
