@@ -2,7 +2,6 @@ using UnityEngine;
 
 public abstract class ParticleDropper : MonoBehaviour
 {
-    [SerializeField]
     protected ParticleSystem _particleSystem;
     protected IMusicEffect _musicEffect;
 
