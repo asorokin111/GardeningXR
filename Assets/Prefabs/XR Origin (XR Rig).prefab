@@ -936,10 +936,8 @@ MonoBehaviour:
     m_Bits: 64
   interactor: {fileID: 6028383242897165704}
   anchorManager: {fileID: 4686145776950701477}
-  prefab: {fileID: 6647569085054192342, guid: 7f860ca956f3840439b2e672062e65c3, type: 3}
-  uhu: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  mesh: {fileID: 3906130615805142554, guid: ee5b83b0311885244ae1d8d48b756081, type: 3}
-  material: {fileID: 2100000, guid: fdcc4ac0fe6bc8c429d73284859f2550, type: 2}
+  grassPrefab: {fileID: 0}
+  drawGrassButton: {fileID: 0}
 --- !u!1 &753735644520805487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,8 +1354,17 @@ LineRenderer:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -2679,7 +2686,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.02
+    widthMultiplier: 0.01
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -4683,7 +4690,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.02
+    widthMultiplier: 0.01
     widthCurve:
       serializedVersion: 2
       m_Curve:
