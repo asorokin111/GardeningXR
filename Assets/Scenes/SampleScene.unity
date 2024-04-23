@@ -236,6 +236,37 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1 &536024986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 536024987}
+  m_Layer: 0
+  m_Name: Mesh Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &536024987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536024986}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.00064975023, y: -0.0000000059604646, z: -0.8002416}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &658251458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,6 +1570,8 @@ GameObject:
   - component: {fileID: 6554278259640418362}
   - component: {fileID: 6554278259640418365}
   - component: {fileID: 6554278259640418366}
+  - component: {fileID: 6554278259640418368}
+  - component: {fileID: 6554278259640418367}
   m_Layer: 2
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -6418,7 +6451,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646750665295740027}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0b1d443007202b4ea34d32049d367f5, type: 3}
   m_Name: 
@@ -6429,6 +6462,43 @@ MonoBehaviour:
     type: 3}
   grassRender: {fileID: 6554278259640418365}
   planeManager: {fileID: 6554278259640418361}
+--- !u!114 &6554278259640418367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646750665295740027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86023f4f8ed6fd849885833b1ddd7526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step: 0.01
+  radius: 0.01
+  radiusPoints: 20
+  lianeMaterial: {fileID: 2100000, guid: 343a4aba0342377478cd7cea40cf83aa, type: 2}
+  leafMaterial: {fileID: 2100000, guid: 6c56ab4d665ac6b42a48299a20a27d18, type: 2}
+  leafPrefab: {fileID: 4687644067119873366, guid: 3f6b132cb12d4134da9e165113d21c59,
+    type: 3}
+--- !u!114 &6554278259640418368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646750665295740027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4dee60855a1f34ebbc07acfbd1eb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeLianeAnchorButton: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  anchorManager: {fileID: 6554278259640418362}
+  interactor: {fileID: 1573465352}
+  lianeMaterial: {fileID: 2100000, guid: 343a4aba0342377478cd7cea40cf83aa, type: 2}
+  myMesh: {fileID: 6554278259640418367}
 --- !u!4 &6613984348789188399
 Transform:
   m_ObjectHideFlags: 0
@@ -7946,3 +8016,4 @@ SceneRoots:
   - {fileID: 658251461}
   - {fileID: 670813621}
   - {fileID: 1609868537}
+  - {fileID: 536024987}
