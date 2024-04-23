@@ -9,6 +9,10 @@ public class SpeechBubbleController : MonoBehaviour
 
     private Vector3 _currentVelocity; // For SmoothDamp
 
+    private const float _moveFrequency = 1.2f;
+    private const float _moveOffset = 0.0f;
+    private const float _moveDistance = 0.2f;
+
     private void Start()
     {
         transform.position = _defaultPosition.position;
@@ -21,6 +25,7 @@ public class SpeechBubbleController : MonoBehaviour
         {
             transform.position = Vector3.SmoothDamp(transform.position, _defaultPosition.position, ref _currentVelocity, _transitionSmoothTime);
         }
+        transform.position = _defaultPosition.position + Mathf.Sin(Time.time * _moveFrequency + _moveOffset) * _moveDistance * transform.up;
     }
     private void LateUpdate()
     {
