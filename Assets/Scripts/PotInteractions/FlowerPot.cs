@@ -54,7 +54,7 @@ namespace Gardening
 
             if (other.CompareTag("Seed") && !_isSeedPlanted)
             {
-                if (other.transform.root.TryGetComponent<SeedPacket>(out var seedPacket))
+                if (other.transform.parent.TryGetComponent<SeedPacket>(out var seedPacket))
                 {
                     Quaternion sproutRotation = Quaternion.identity;
                     sproutRotation.eulerAngles = new Vector3(-90f, 0f, 0f);
