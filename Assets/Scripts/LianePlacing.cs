@@ -1,48 +1,46 @@
 using System.Collections.Generic;
+using System.Linq;
 using Nrjwolf.Tools.AttachAttributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class LianePlacing : MonoBehaviour
 {
-	[SerializeField]                private InputActionReference placeLianeAnchorButton;
-	[SerializeField]                private ARAnchorManager      anchorManager;
-	[SerializeField]                private XRRayInteractor      interactor;
-	[SerializeField]                private Material             lianeMaterial;
-	[GetComponent] [SerializeField] private MyMesh               myMesh;
-
-	private List<Vector3> _anchors = new();
-
+	[SerializeField] private int lianesCount;
+	[GetComponent] [SerializeField] private ARPlaneManager 	 arPlaneManager;
+	[GetComponent] [SerializeField] private LianeMeshGenerator   lianeMeshGenerator;
+	
 	private void Start()
 	{
-		placeLianeAnchorButton.action.performed += (ctx) => PlaceLianeAnchor();
+		arPlaneManager.trackablesChanged.AddListener(PlaceLianes);
 	}
-	
-	private async void PlaceLianeAnchor()
+
+	private void PlaceLianes(ARTrackablesChangedEventArgs<ARPlane> args)
 	{
-		interactor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
+		var groundPlane = args.added.First(plane => plane.classifications == PlaneClassifications.DoorFrame);
+		if (groundPlane == default) return;
 
-		Pose hitPos = new Pose(hit.point, Quaternion.LookRotation(hit.normal));
-
-		if (!hit.collider.gameObject.TryGetComponent(out ARPlane plane)) return;
-		var  result  = await anchorManager.TryAddAnchorAsync(hitPos);
-		bool success = result.TryGetResult(out ARAnchor anchor);
-
-		if (!success) return;
-
-		_anchors.Add(anchor.pose.position);
-		if (_anchors.Count == 2)
+		for (int i = 0; i < lianesCount; i++)
 		{
-			GenerateLiane(_anchors[0], _anchors[1]);
-			_anchors.Clear();
+			var groundPos = groundPlane.center + new Vector3(
+				Random.Range(-groundPlane.extents.x, groundPlane.extents.x),
+				0,
+				Random.Range(-groundPlane.extents.y, groundPlane.extents.y)
+				);
+
+			var ceilingPos = groundPos + new Vector3(
+				Random.Range(-0.4f, 0.4f),
+				3,
+				Random.Range(-0.4f, 0.4f)
+				);
+			
+			lianeMeshGenerator.GenerateLianeBetweenPoints(groundPos, ceilingPos);
 		}
+		
+		arPlaneManager.trackablesChanged.RemoveListener(PlaceLianes);
 	}
-
-	private void GenerateLiane(Vector3 pos1, Vector3 pos2)
-	{
-		myMesh.GenerateLianeBetweenPoints(pos1, pos2);
-	}
-
 }

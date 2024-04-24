@@ -6,12 +6,11 @@ using UnityEngine;
 
 public class MeshTest : MonoBehaviour
 {
-	[GetComponent][SerializeField] private MyMesh myMesh;
-	[GetComponent][SerializeField] private MeshFilter myMeshFilter;
-	[SerializeField] private Transform p1, p2;
+	[GetComponent][SerializeField] private LianeMeshGenerator leaneMeshGenerator;
+	[SerializeField]               private Transform          p1, p2;
 
 	private void Start()
 	{
-		myMesh.GenerateLianeBetweenPoints(p1.position, p2.position);
+		leaneMeshGenerator.GenerateLianeBetweenPoints(p1.position, p2.position);
 	}
 }

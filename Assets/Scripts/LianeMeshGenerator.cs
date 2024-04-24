@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class MyMesh : MonoBehaviour
+public class LianeMeshGenerator : MonoBehaviour
 {
 	[SerializeField] private float      step, radius;
 	[SerializeField] private int        radiusPoints;

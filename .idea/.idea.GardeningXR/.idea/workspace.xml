@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="088ae876-99c9-47ff-ba7b-5d6cd1558fde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GardeningXR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GardeningXR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/LianaMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/LianaMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Metal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Metal.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Sphere.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LianePlacing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LianePlacing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MyMesh.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MyMesh.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +125,8 @@
       <workItem from="1713767041843" duration="760000" />
       <workItem from="1713771373000" duration="114000" />
       <workItem from="1713779026523" duration="7701000" />
-      <workItem from="1713852244546" duration="21318000" />
+      <workItem from="1713852244546" duration="21914000" />
+      <workItem from="1713937985876" duration="1963000" />
     </task>
     <servers />
   </component>

@@ -6493,12 +6493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4dee60855a1f34ebbc07acfbd1eb03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeLianeAnchorButton: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
-  anchorManager: {fileID: 6554278259640418362}
-  interactor: {fileID: 1573465352}
-  lianeMaterial: {fileID: 2100000, guid: 343a4aba0342377478cd7cea40cf83aa, type: 2}
-  myMesh: {fileID: 6554278259640418367}
+  lianesCount: 5
+  arPlaneManager: {fileID: 6554278259640418361}
+  lianeMeshGenerator: {fileID: 6554278259640418367}
 --- !u!4 &6613984348789188399
 Transform:
   m_ObjectHideFlags: 0
