@@ -47,27 +47,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 0}
   _tutorialPhrasesList:
-  - text: "Initial \xE4\xE4\xE4\xE4\xE4\xE4\xE4\xE4"
+  - text: Hei! Tervetuloa puutarhanhoito-oppaaseen.
     phraseTypingDuration: 2
     isFillerText: 1
-  - text: Test1
+  - text: "T\xE4m\xE4n p\xE4iv\xE4n aiheena ovat kasvit"
     phraseTypingDuration: 1
     isFillerText: 1
-  - text: Test2
+  - text: "Sinun pit\xE4isi n\xE4hd\xE4 edess\xE4si ruukku. Yrit\xE4 nostaa sit\xE4
+      yl\xF6s."
+    phraseTypingDuration: 2
+    isFillerText: 1
+  - text: "Toivottavasti et rikkonut sit\xE4, mutta jos rikoit, paina p\xF6yd\xE4n
+      vasemmalla puolella olevaa nappia saadaksesi uuden."
+    phraseTypingDuration: 5
+    isFillerText: 1
+  - text: "Yrit\xE4 nyt nostaa multapaketti ja kaada se ruukkuun"
+    phraseTypingDuration: 2
+    isFillerText: 1
+  - text: "Hyv\xE4\xE4 ty\xF6t\xE4!"
+    phraseTypingDuration: 1
+    isFillerText: 0
+  - text: Seuraavaksi sinun on nostettava siemenpakkaus.
+    phraseTypingDuration: 2
+    isFillerText: 1
+  - text: "Valitse mit\xE4 haluat! Kaada se sitten ruukkuun"
+    phraseTypingDuration: 2
+    isFillerText: 1
+  - text: Erinomaista!
+    phraseTypingDuration: 1
+    isFillerText: 0
+  - text: Nyt kastellaan pienet siemenemme.
     phraseTypingDuration: 1
     isFillerText: 1
-  - text: Test3
-    phraseTypingDuration: 1
-    isFillerText: 0
-  - text: Test4
-    phraseTypingDuration: 1
-    isFillerText: 0
-  - text: Test5
+  - text: Ota kastelukannu ja kastele siemen.
     phraseTypingDuration: 1
     isFillerText: 1
-  - text: Test6
+  - text: "Katsokaa t\xE4t\xE4 kaunista kukkaa!"
     phraseTypingDuration: 1
     isFillerText: 0
+  - text: Varokaa! Jos rikot ruukun, kukka tuhoutuu.
+    phraseTypingDuration: 2
+    isFillerText: 1
+  - text: "Nyt kun tied\xE4t, miten kukkia kasvatetaan, voit kokeilla sit\xE4 itse!"
+    phraseTypingDuration: 3
+    isFillerText: 1
   _timeUntilNextPhrase: 5
 --- !u!114 &5090828292738482797
 MonoBehaviour:

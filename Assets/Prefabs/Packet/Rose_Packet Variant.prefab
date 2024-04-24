@@ -10,6 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5368658398066792336, guid: a5d281715c893a14b9525c242513e189,
         type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5368658398066792336, guid: a5d281715c893a14b9525c242513e189,
+        type: 3}
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: a69a92dc3b03b704baa853877a47ece5, type: 3}
