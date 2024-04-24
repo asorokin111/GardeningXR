@@ -11,6 +11,9 @@ namespace Gardening
         public delegate void PlantGrownAction();
         public static PlantGrownAction OnPlantGrown;
 
+        public Vector3 startingEulerRotation = Vector3.zero;
+        public Vector3 startingPositionOffset = Vector3.zero;
+
         [SerializeField] private MeshRenderer _meshRenderer;
         [SerializeField] private float _minGrowValue;
         [SerializeField] private float _maxGrowValue;
