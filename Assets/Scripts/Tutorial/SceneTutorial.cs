@@ -34,6 +34,8 @@ public class SceneTutorial : MonoBehaviour
         {
             instance = this;
         }
+
+        _text = GameObject.Find("Tutorial Text").GetComponent<TMP_Text>();
     }
 
     private void Start()
