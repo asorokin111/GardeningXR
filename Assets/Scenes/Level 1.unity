@@ -724,118 +724,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &1222068696
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 596895248326897213, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: _audioData
-      value: 
-      objectReference: {fileID: 11400000, guid: d4d926e6329d98b4fac365c970487a06,
-        type: 2}
-    - target: {fileID: 596895248326897213, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: _audioMixer
-      value: 
-      objectReference: {fileID: 24100000, guid: 46a1dbee44604c8478d7597b564a8290,
-        type: 2}
-    - target: {fileID: 1147412047777586730, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5249624744235014566, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 3705652705939394075, guid: 46a1dbee44604c8478d7597b564a8290,
-        type: 2}
-    - target: {fileID: 7563237196507552333, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563237196507552333, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: c02fa3644c5396b42a13c7edf2f001b8, type: 3}
-    - target: {fileID: 7563237196507552333, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: c02fa3644c5396b42a13c7edf2f001b8, type: 3}
-    - target: {fileID: 7563237196507552333, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563237196507552333, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 8639730606188716159, guid: 46a1dbee44604c8478d7597b564a8290,
-        type: 2}
-    - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.3591755
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2103744
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.8678632
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9159599245284672956, guid: 0bcad0dcea095ae4f9984b8acf36b625,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0bcad0dcea095ae4f9984b8acf36b625, type: 3}
 --- !u!114 &1295423504 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1458384193087329190, guid: a92967b4eac7c0348851815aa28b24c0,
@@ -1042,6 +930,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 553886238}
+    - targetCorrespondingSourceObject: {fileID: 586632224102590049, guid: a92967b4eac7c0348851815aa28b24c0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1663094149}
+    - targetCorrespondingSourceObject: {fileID: 586632224102590049, guid: a92967b4eac7c0348851815aa28b24c0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1663094150}
     - targetCorrespondingSourceObject: {fileID: 189313660959253238, guid: a92967b4eac7c0348851815aa28b24c0,
         type: 3}
       insertIndex: -1
@@ -1094,6 +990,40 @@ MonoBehaviour:
   m_EnvironmentDepthMode: 1
   m_EnvironmentDepthTemporalSmoothing: 1
   m_OcclusionPreferenceMode: 0
+--- !u!114 &1663094149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329200742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86023f4f8ed6fd849885833b1ddd7526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step: 0.01
+  radius: 0.01
+  radiusPoints: 20
+  lianeMaterial: {fileID: 2100000, guid: 343a4aba0342377478cd7cea40cf83aa, type: 2}
+  leafMaterial: {fileID: 2100000, guid: 6c56ab4d665ac6b42a48299a20a27d18, type: 2}
+  leafPrefab: {fileID: 4687644067119873366, guid: 0bcad0dcea095ae4f9984b8acf36b625,
+    type: 3}
+--- !u!114 &1663094150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329200742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4dee60855a1f34ebbc07acfbd1eb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lianesCount: 3
+  arPlaneManager: {fileID: 1295423504}
+  lianeMeshGenerator: {fileID: 1663094149}
 --- !u!1001 &1730845552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1367,6 +1297,5 @@ SceneRoots:
   - {fileID: 1174003707}
   - {fileID: 1965298780}
   - {fileID: 1730845552}
-  - {fileID: 1222068696}
   - {fileID: 1109100552}
   - {fileID: 1324868973}
