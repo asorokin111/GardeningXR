@@ -765,7 +765,7 @@ MonoBehaviour:
   m_AimTargetObject: {fileID: 201461204}
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 2147483681
+    m_Bits: 6177
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_TargetNumCurveSegments: 1
@@ -3854,7 +3854,7 @@ MonoBehaviour:
   m_AimTargetObject: {fileID: 679135686}
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 2147483681
+    m_Bits: 6177
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_TargetNumCurveSegments: 1
@@ -7344,6 +7344,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2541757394213165162, guid: ffabdf3dc7803784ca216f7e74d9d2b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2886229355216503504, guid: ffabdf3dc7803784ca216f7e74d9d2b0,
         type: 3}
       propertyPath: m_LocalScale.x

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 125077221362614294}
   - component: {fileID: 6031477000762187144}
   - component: {fileID: 690366890518474285}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HemisphericalSponge
   m_TagString: Sponge
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1

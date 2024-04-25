@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace Gardening
@@ -15,13 +18,26 @@ namespace Gardening
         private bool _isAnchored = false;
         private Rigidbody _rb;
         private Quaternion _startingRotation;
+        private FlowerState _state;
+        private LayerMask _startingLayer;
+
+        [Flags]
+        private enum FlowerState
+        {
+            None = 0,
+            Anchorable = 1,
+            Unanchorable = 2,
+            All = 3,
+        }
 
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
             _startingRotation = transform.rotation;
             _interactable = GetComponent<XRGrabInteractable>();
-            //_interactable.selectEntered.AddListener(Unanchor);
+            _interactable.selectEntered.AddListener(Unanchor);
+            _state = FlowerState.All;
+            _startingLayer = gameObject.layer;
         }
 
         private void OnCollisionEnter(Collision other)
@@ -39,12 +55,12 @@ namespace Gardening
 
         private void AnchorTo(Collision other)
         {
-            _interactable.enabled = false;
-            _rb.isKinematic = true;
-            GetComponent<Collider>().enabled = false;
+            if ((_state & FlowerState.Anchorable) == FlowerState.None) return;
 
-            //Vector3 averageOfPoints = GetAverageOfContactPoints(other.contacts);
-            //transform.SetPositionAndRotation(averageOfPoints, Quaternion.FromToRotation(transform.up, -other.GetContact(0).normal));
+            ToggleAnchoredLayer();
+            StartCoroutine(TemporaryFlipFlowerState(FlowerState.Unanchorable, 2));
+            _rb.isKinematic = true;
+
             transform.SetParent(other.transform, true);
             transform.rotation = Quaternion.FromToRotation(Vector3.up, other.GetContact(0).normal);
             transform.rotation *= _startingRotation;
@@ -52,17 +68,38 @@ namespace Gardening
             _isAnchored = true;
         }
 
-        //        private void Unanchor(SelectEnterEventArgs args)
-        //        {
-        //#pragma warning disable 0252
-        //            // Comparing references here, need to check if this actually works
-        //            if (args.interactableObject != _interactable) { Debug.Log("Interactable object is not equal to interactable"); return; };
-        //#pragma warning restore
-        //            _isAnchored = false;
-        //            transform.SetParent(null, true);
-        //            GetComponent<Collider>().enabled = true;
-        //            _rb.isKinematic = false;
-        //        }
+        private void Unanchor(SelectEnterEventArgs args)
+        {
+            if (!_isAnchored || (_state & FlowerState.Unanchorable) == FlowerState.None) return;
+
+            StartCoroutine(TemporaryFlipFlowerState(FlowerState.Anchorable, 2)); // Anchor immunity
+            _isAnchored = false;
+            ToggleAnchoredLayer();
+            transform.SetParent(null, true);
+            _rb.isKinematic = false;
+        }
+
+        /// <summary>
+        /// Flip a given flower state flag and flip it again after <paramref name="seconds"/> seconds pass
+        /// </summary>
+        private IEnumerator TemporaryFlipFlowerState(FlowerState flag, float seconds)
+        {
+            _state ^= flag;
+            yield return new WaitForSeconds(seconds);
+            _state ^= flag;
+        }
+
+        private void ToggleAnchoredLayer()
+        {
+            if (gameObject.layer == _startingLayer)
+            {
+                gameObject.layer = LayerMask.NameToLayer("AnchoredPlant");
+            }
+            else
+            {
+                gameObject.layer = _startingLayer;
+            }
+        }
     }
 
 }
