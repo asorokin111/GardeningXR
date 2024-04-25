@@ -6,40 +6,25 @@ public class LevelOneTutorialTriggers : MonoBehaviour
     private enum TutorialStates
     {
         InitialState = 0,
-        SoilBagPickedUp = 1,
-        PotFilled = 2,
-        SeedBagPickedUp = 3,
-        SeedPlanted = 4,
-        WateringCanPickedUp = 5,
-        PlantGrown = 6,
+        PotFilled = 1,
+        SeedPlanted = 2,
+        PlantGrown = 3,
     }
 
     private int _currentState = (int)TutorialStates.InitialState;
 
     private void OnEnable()
     {
-        WateringCan.OnWateringCanFirstPickedUp += WateringCanPickedUpEventHandler;
-        DirtPacket.OnDirtPacketFirstPickedUp += SoilBagPickedUpEventHandler;
         GroundFilling.OnPotFilled += PotFilledEventHandler;
         FlowerPot.OnSeedPlanted += SeedPlantedEventHandler;
-        SeedPacket.OnSeedPacketFirstPickedUp += SeedBagPickedUpEventHandler;
         Plant.OnPlantGrown += PlantGrownEventHandler;
     }
 
     private void OnDisable()
     {
         Plant.OnPlantGrown -= PlantGrownEventHandler;
-        SeedPacket.OnSeedPacketFirstPickedUp -= SeedBagPickedUpEventHandler;
         FlowerPot.OnSeedPlanted -= SeedPlantedEventHandler;
         GroundFilling.OnPotFilled -= PotFilledEventHandler;
-        DirtPacket.OnDirtPacketFirstPickedUp -= SoilBagPickedUpEventHandler;
-        WateringCan.OnWateringCanFirstPickedUp -= WateringCanPickedUpEventHandler;
-    }
-
-    private void SoilBagPickedUpEventHandler()
-    {
-        //NextPhrase();
-        CheckStateAndPrintNext((int)TutorialStates.SoilBagPickedUp - 1);
     }
 
     private void PotFilledEventHandler()
@@ -47,19 +32,9 @@ public class LevelOneTutorialTriggers : MonoBehaviour
         CheckStateAndPrintNext((int)TutorialStates.PotFilled - 1);
     }
 
-    private void SeedBagPickedUpEventHandler()
-    {
-        CheckStateAndPrintNext((int)TutorialStates.SeedBagPickedUp - 1);
-    }
-
     private void SeedPlantedEventHandler()
     {
         CheckStateAndPrintNext((int)TutorialStates.SeedPlanted - 1);
-    }
-
-    private void WateringCanPickedUpEventHandler()
-    {
-        CheckStateAndPrintNext((int)TutorialStates.WateringCanPickedUp - 1);
     }
 
     private void PlantGrownEventHandler()

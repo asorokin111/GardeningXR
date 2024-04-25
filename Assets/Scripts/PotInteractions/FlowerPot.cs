@@ -9,7 +9,8 @@ namespace Gardening
         public delegate void SeedPlantedAction();
         public static SeedPlantedAction OnSeedPlanted;
 
-        [SerializeField] private Transform _plantRootsPosition;
+        [SerializeField]
+        private Transform _plantRootsPosition;
         private bool _isSeedPlanted = false;
 
         private GroundFilling _groundFillerScript;
@@ -54,11 +55,11 @@ namespace Gardening
 
             if (other.CompareTag("Seed") && !_isSeedPlanted)
             {
-                if (other.transform.root.TryGetComponent<SeedPacket>(out var seedPacket))
+                if (other.transform.parent.TryGetComponent<SeedPacket>(out var seedPacket))
                 {
                     Quaternion sproutRotation = Quaternion.identity;
-                    sproutRotation.eulerAngles = new Vector3(-90f, 0f, 0f);
-                    plant = Instantiate(seedPacket.associatedPlant, _plantRootsPosition.position, sproutRotation);
+                    sproutRotation.eulerAngles = seedPacket.associatedPlant.startingEulerRotation;
+                    plant = Instantiate(seedPacket.associatedPlant, _plantRootsPosition.position + seedPacket.associatedPlant.startingPositionOffset, sproutRotation);
                     plant.PlantThePlant();
                     plant.transform.parent = transform;
                     _isSeedPlanted = true;

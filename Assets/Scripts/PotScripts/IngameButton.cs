@@ -13,8 +13,8 @@ public class IngameButton : MonoBehaviour
     /// <summary>
     /// <seealso cref="IIngameButtonLogic"/>
     /// </summary>
-    public void OnButtonPressed() {
-Debug.Log("Pressed");
-	 targetLogic.GetComponent<IIngameButtonLogic>().TriggerAction(); 
-	}
+    public void OnButtonPressed()
+    {
+        targetLogic.GetComponent<IIngameButtonLogic>().TriggerAction(); 
+    }
 }
