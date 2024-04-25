@@ -44,7 +44,7 @@ namespace Gardening
             //Vector3 averageOfPoints = GetAverageOfContactPoints(other.contacts);
             //transform.SetPositionAndRotation(averageOfPoints, Quaternion.FromToRotation(transform.up, -other.GetContact(0).normal));
             transform.SetParent(other.transform, true);
-            transform.rotation = Quaternion.FromToRotation(transform.up, -other.GetContact(0).normal);
+            transform.rotation = Quaternion.FromToRotation(Vector3.up, other.GetContact(0).normal);
 
             _isAnchored = true;
         }
