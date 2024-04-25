@@ -16,23 +16,23 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
     private void OnEnable()
     {
-        inputAction.action.performed += ReenableDraw;
-        inputAction.action.canceled += ReenableDraw;
+        inputAction.action.performed += PlaceSurroundings;
+        inputAction.action.canceled += PlaceSurroundings;
     }
 
     private void OnDisable()
     {
-        inputAction.action.performed -= ReenableDraw;
-        inputAction.action.canceled -= ReenableDraw;
+        inputAction.action.performed -= PlaceSurroundings;
+        inputAction.action.canceled -= PlaceSurroundings;
     }
 
-    private void ReenableDraw(InputAction.CallbackContext ctx)
+    private void PlaceSurroundings(InputAction.CallbackContext ctx)
     {
         if (!_hasBeenSpawned)
-            SpawnAnchor(null);
+            SpawnTable(null);
     }
 
-    public async void SpawnAnchor(BaseInteractionEventArgs args)
+    public async void SpawnTable(BaseInteractionEventArgs args)
     {
         interactor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
 
@@ -49,5 +49,7 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
         Instantiate(prefab, anchor.pose.position, Quaternion.identity);
 
         _hasBeenSpawned = true;
+
+        GameManager.Instance.ChangeGameState(GameState.Playing);
     }
 }
