@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="088ae876-99c9-47ff-ba7b-5d6cd1558fde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GardeningXR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GardeningXR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Water Gun/Animation/Reloading.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Water Gun/Animation/Reloading.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Water Gun/Animation/Water Gun.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Water Gun/Animation/Water Gun.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bubble.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bubble.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.0.1/Starter Assets/XRI Default Input Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.0.1/Starter Assets/XRI Default Input Actions.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PunGun.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PunGun.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,13 +23,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gun/GunAttacher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MeshTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PunGun.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@3.0.1/Runtime/Interaction/Interactors/Casters/CurveInteractionCaster.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@3.0.1/Runtime/Interaction/Interactors/NearFarInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@3.0.1/Runtime/Interaction/Interactors/XRInteractionGroup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@3.0.1/Runtime/Interaction/Interactors/XRPokeInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@3.0.1/Runtime/Interaction/Interactors/XRRayInteractor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@3.0.1/Runtime/UI/UIInputModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/Unity-InstancedIndirectExamples-master/Unity-InstancedIndirectExamples-master/Demos-DrawMeshInstancedIndirect/Assets/InstancedIndirectExample/InstancedIndirectExample.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -122,7 +129,7 @@
       <workItem from="1713779026523" duration="7701000" />
       <workItem from="1713852244546" duration="21914000" />
       <workItem from="1713937985876" duration="1963000" />
-      <workItem from="1714029175869" duration="6122000" />
+      <workItem from="1714029175869" duration="10884000" />
     </task>
     <servers />
   </component>
