@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="088ae876-99c9-47ff-ba7b-5d6cd1558fde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GardeningXR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GardeningXR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Water Gun/Animation/Reloading.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Water Gun/Animation/Reloading.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Water Gun/Animation/Water Gun.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Water Gun/Animation/Water Gun.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bubble.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bubble.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.0.1/Starter Assets/XRI Default Input Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/3.0.1/Starter Assets/XRI Default Input Actions.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PunGun.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PunGun.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gun/Bubble.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gun/Bubble.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +126,7 @@
       <workItem from="1713852244546" duration="21914000" />
       <workItem from="1713937985876" duration="1963000" />
       <workItem from="1714029175869" duration="10884000" />
+      <workItem from="1714042556201" duration="3903000" />
     </task>
     <servers />
   </component>
