@@ -129,12 +129,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 376568288f713924a81c3ded3dda6a63, type: 3}
---- !u!198 &2719355864177311024 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3027648690827448859, guid: 376568288f713924a81c3ded3dda6a63,
-    type: 3}
-  m_PrefabInstance: {fileID: 1133017807418273579}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2719355864177311027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3027648690827448856, guid: 376568288f713924a81c3ded3dda6a63,
@@ -461,7 +455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3859d8bfa8e9cd94aad9a7e6acac2f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particleSystem: {fileID: 2719355864177311024}
 --- !u!82 &1035071270637979107
 AudioSource:
   m_ObjectHideFlags: 0
@@ -478,7 +471,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
