@@ -14,10 +14,12 @@ namespace Gardening
         private XRGrabInteractable _interactable;
         private bool _isAnchored = false;
         private Rigidbody _rb;
+        private Quaternion _startingRotation;
 
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
+            _startingRotation = transform.rotation;
             _interactable = GetComponent<XRGrabInteractable>();
             //_interactable.selectEntered.AddListener(Unanchor);
         }
@@ -45,6 +47,7 @@ namespace Gardening
             //transform.SetPositionAndRotation(averageOfPoints, Quaternion.FromToRotation(transform.up, -other.GetContact(0).normal));
             transform.SetParent(other.transform, true);
             transform.rotation = Quaternion.FromToRotation(Vector3.up, other.GetContact(0).normal);
+            transform.rotation *= _startingRotation;
 
             _isAnchored = true;
         }
