@@ -6,9 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="088ae876-99c9-47ff-ba7b-5d6cd1558fde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GardeningXR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GardeningXR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bubble Shader Graph.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bubble Shader Graph.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bubble Shader Graph.shadergraph.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bubble Shader Graph.shadergraph.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bubble.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bubble.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Shader Graphs_Bubble Shader Graph.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Shader Graphs_Bubble Shader Graph.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gun/Bubble.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gun/Bubble.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gun/GunAttacher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gun/GunAttacher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gun/PunGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gun/PunGun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +29,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gun/GunAttacher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MeshTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@3.0.1/Runtime/Interaction/Gaze/XRGazeAssistance.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@3.0.1/Runtime/Interaction/Interactors/Casters/CurveInteractionCaster.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@3.0.1/Runtime/Interaction/Interactors/NearFarInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@3.0.1/Runtime/Interaction/Interactors/XRInteractionGroup.cs" root0="SKIP_HIGHLIGHTING" />
@@ -126,7 +135,8 @@
       <workItem from="1713852244546" duration="21914000" />
       <workItem from="1713937985876" duration="1963000" />
       <workItem from="1714029175869" duration="10884000" />
-      <workItem from="1714042556201" duration="3903000" />
+      <workItem from="1714042556201" duration="5794000" />
+      <workItem from="1714111114799" duration="924000" />
     </task>
     <servers />
   </component>

@@ -45,6 +45,6 @@ public class Bubble : MonoBehaviour
 			_speed
 		);
 		
-		rb.velocity = Quaternion.LookRotation(radiusVector, _shotDirection) * radiusVector;
+		rb.velocity = Quaternion.LookRotation(_shotDirection, radiusVector) * radiusVector;
 	}
 }

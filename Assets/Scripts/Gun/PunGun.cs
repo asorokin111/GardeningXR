@@ -50,6 +50,7 @@ public class PunGun : MonoBehaviour
 	{
 		// if player tries to shoot faster than FireDelay or is reloading 
 		if (_lastShotTime + FireDelay > Time.time || _isReloading) return;
+		if (CurrentAmmoInMagazine == 0 && CurrentTotalAmmo == 0) return;
 		StartCoroutine(_shootCoroutine);
 	}
 
@@ -97,7 +98,7 @@ public class PunGun : MonoBehaviour
 		var bullet = _bubblePool.Get();
 		bullet.Init(KillBubble);
 		bullet.transform.position = bulletSpawnPoint.position;
-		bullet.SetVelocity(bulletSpawnPoint.forward * bulletSpeed);
+		bullet.SetVelocity(transform.forward * bulletSpeed);
 		bullet.transform.SetParent(null);
 	}
 	
