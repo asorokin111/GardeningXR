@@ -20,6 +20,9 @@ namespace Gardening
         private Quaternion _startingRotation;
         private FlowerState _state;
         private LayerMask _startingLayer;
+        // Needed to return rigidbody to correct values after releasing grab
+        private bool _wasKinematic;
+        private const float _interactionCooldown = 1f;
 
         [Flags]
         private enum FlowerState
@@ -36,8 +39,10 @@ namespace Gardening
             _startingRotation = transform.rotation;
             _interactable = GetComponent<XRGrabInteractable>();
             _interactable.selectEntered.AddListener(Unanchor);
+            _interactable.selectExited.AddListener(RestoreCorrectKinematicState);
             _state = FlowerState.All;
             _startingLayer = gameObject.layer;
+            _wasKinematic = _rb.isKinematic;
         }
 
         private void OnCollisionEnter(Collision other)
@@ -56,32 +61,39 @@ namespace Gardening
         private void AnchorTo(Collision other)
         {
             if ((_state & FlowerState.Anchorable) == FlowerState.None) return;
-            Debug.Log("Anchor activated");
             
             ToggleAnchoredLayer();
-            StartCoroutine(TemporaryFlipFlowerState(FlowerState.Unanchorable, 2));
+            StartCoroutine(TemporaryFlipFlowerState(FlowerState.Unanchorable, _interactionCooldown));
+            StartCoroutine(DisableInteractable(_interactionCooldown));
            
             transform.SetParent(other.transform, true);
             transform.rotation = Quaternion.FromToRotation(Vector3.up, other.GetContact(0).normal);
             transform.rotation *= _startingRotation;
 
             _rb.isKinematic = true;
+            _wasKinematic = _rb.isKinematic;
             _isAnchored = true;
-            Debug.Log("Anchored: " + _isAnchored);
-            Debug.Log("Kinematic: " + _rb.isKinematic);
         }
 
-        private void Unanchor(SelectEnterEventArgs args)
+        private void Unanchor(SelectEnterEventArgs _)
         {
             if (!_isAnchored || (_state & FlowerState.Unanchorable) == FlowerState.None) return;
-            Debug.Log("Unanchor activated");
-            StartCoroutine(TemporaryFlipFlowerState(FlowerState.Anchorable, 2)); // Anchor immunity
+            StartCoroutine(TemporaryFlipFlowerState(FlowerState.Anchorable, _interactionCooldown)); // Anchor immunity
             ToggleAnchoredLayer();
             transform.SetParent(null, true);
+
             _rb.isKinematic = false;
+            _wasKinematic = _rb.isKinematic;
             _isAnchored = false;
-            Debug.Log("Anchored: " + _isAnchored);
-            Debug.Log("Kinematic: " + _rb.isKinematic);
+        }
+
+        /// <summary>
+        /// Return this rigidbody to a state set by anchor/unanchor rather than whatever it was before being grabbed.
+        /// Unless it's already the same, in which case it's flipped
+        /// </summary>
+        private void RestoreCorrectKinematicState(SelectExitEventArgs _)
+        {
+            _rb.isKinematic = _rb.isKinematic != _wasKinematic ? _wasKinematic : !_wasKinematic;
         }
 
         /// <summary>
@@ -94,10 +106,16 @@ namespace Gardening
             _state ^= flag;
         }
 
+        private IEnumerator DisableInteractable(float seconds)
+        {
+            _interactable.enabled = false;
+            yield return new WaitForSeconds(seconds);
+            _interactable.enabled = true;
+        }
+
         private void ToggleAnchoredLayer()
         {
             gameObject.layer = gameObject.layer == _startingLayer ? LayerMask.NameToLayer("AnchoredPlant") : _startingLayer;
         }
     }
-
 }
