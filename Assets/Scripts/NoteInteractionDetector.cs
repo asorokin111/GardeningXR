@@ -12,9 +12,6 @@ public class NoteInteractionDetector: MonoBehaviour
 
     private Collider _boardCollider;
 
-    //private float _sphereCheckRadius;
-    //private bool _isHanging = false;
-
     private void Start()
     {
         _inputActions = new NewControls();
@@ -39,7 +36,6 @@ public class NoteInteractionDetector: MonoBehaviour
         if (other.gameObject.CompareTag("CorkBoard"))
         {
             _boardCollider = null;
-            //_isHanging = false;
             _grabInteractable.selectExited.RemoveListener(Snap);
         }
     }
@@ -54,18 +50,6 @@ public class NoteInteractionDetector: MonoBehaviour
 
     private void Snap(SelectExitEventArgs args)
     {
-        //_isHanging = true;
         SetSnapValues();
-        //_grabInteractable.selectExited.AddListener(SnapOrForget);
     }
-    //private void SnapOrForget(UnityEngine.XR.Interaction.Toolkit.SelectExitEventArgs args)
-    //{
-    //    Debug.Log("Snap or Forget");
-    //    Collider[] hitColliders = Physics.OverlapSphere(transform.position, _sphereCheckRadius);
-    //    if (hitColliders.Length > 0 && hitColliders.Contains(_boardCollider) && _isHanging)
-    //    {
-    //        SetSnapValues();
-    //        Debug.Log("HA Ha");
-    //    }
-    //}
 }

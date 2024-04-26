@@ -57,15 +57,18 @@ namespace Gardening
         {
             if ((_state & FlowerState.Anchorable) == FlowerState.None) return;
             Debug.Log("Anchor activated");
+            
             ToggleAnchoredLayer();
             StartCoroutine(TemporaryFlipFlowerState(FlowerState.Unanchorable, 2));
-            _rb.isKinematic = true;
-
+           
             transform.SetParent(other.transform, true);
             transform.rotation = Quaternion.FromToRotation(Vector3.up, other.GetContact(0).normal);
             transform.rotation *= _startingRotation;
 
+            _rb.isKinematic = true;
             _isAnchored = true;
+            Debug.Log("Anchored: " + _isAnchored);
+            Debug.Log("Kinematic: " + _rb.isKinematic);
         }
 
         private void Unanchor(SelectEnterEventArgs args)
@@ -77,6 +80,8 @@ namespace Gardening
             transform.SetParent(null, true);
             _rb.isKinematic = false;
             _isAnchored = false;
+            Debug.Log("Anchored: " + _isAnchored);
+            Debug.Log("Kinematic: " + _rb.isKinematic);
         }
 
         /// <summary>
@@ -91,14 +96,7 @@ namespace Gardening
 
         private void ToggleAnchoredLayer()
         {
-            if (gameObject.layer == _startingLayer)
-            {
-                gameObject.layer = LayerMask.NameToLayer("AnchoredPlant");
-            }
-            else
-            {
-                gameObject.layer = _startingLayer;
-            }
+            gameObject.layer = gameObject.layer == _startingLayer ? LayerMask.NameToLayer("AnchoredPlant") : _startingLayer;
         }
     }
 
