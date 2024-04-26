@@ -56,7 +56,7 @@ namespace Gardening
         private void AnchorTo(Collision other)
         {
             if ((_state & FlowerState.Anchorable) == FlowerState.None) return;
-
+            Debug.Log("Anchor activated");
             ToggleAnchoredLayer();
             StartCoroutine(TemporaryFlipFlowerState(FlowerState.Unanchorable, 2));
             _rb.isKinematic = true;
@@ -71,12 +71,12 @@ namespace Gardening
         private void Unanchor(SelectEnterEventArgs args)
         {
             if (!_isAnchored || (_state & FlowerState.Unanchorable) == FlowerState.None) return;
-
+            Debug.Log("Unanchor activated");
             StartCoroutine(TemporaryFlipFlowerState(FlowerState.Anchorable, 2)); // Anchor immunity
-            _isAnchored = false;
             ToggleAnchoredLayer();
             transform.SetParent(null, true);
             _rb.isKinematic = false;
+            _isAnchored = false;
         }
 
         /// <summary>
