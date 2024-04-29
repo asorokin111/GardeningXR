@@ -51,20 +51,13 @@ namespace Gardening
             AnchorTo(other);
         }
 
-        //private Vector3 GetAverageOfContactPoints(ContactPoint[] points)
-        //{
-        //    Vector3 sum = Vector3.zero;
-        //    Array.ForEach(points, delegate (ContactPoint c) { sum += c.point; });
-        //    return sum / points.Length;
-        //}
-
         private void AnchorTo(Collision other)
         {
             if ((_state & FlowerState.Anchorable) == FlowerState.None) return;
             
             ToggleAnchoredLayer();
             StartCoroutine(TemporaryFlipFlowerState(FlowerState.Unanchorable, _interactionCooldown));
-            StartCoroutine(DisableInteractable(_interactionCooldown));
+            StartCoroutine(TemporarilyDisableInteractable(_interactionCooldown));
            
             transform.SetParent(other.transform, true);
             transform.rotation = Quaternion.FromToRotation(Vector3.up, other.GetContact(0).normal);
@@ -106,7 +99,7 @@ namespace Gardening
             _state ^= flag;
         }
 
-        private IEnumerator DisableInteractable(float seconds)
+        private IEnumerator TemporarilyDisableInteractable(float seconds)
         {
             _interactable.enabled = false;
             yield return new WaitForSeconds(seconds);
