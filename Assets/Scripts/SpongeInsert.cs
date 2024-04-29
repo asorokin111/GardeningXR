@@ -23,7 +23,7 @@ namespace Gardening
         private FlowerState _state;
         private LayerMask _startingLayer;
         // Needed to return rigidbody to correct values after releasing grab
-        private bool _wasKinematic;
+        private bool _prevKinematicState;
         private const float _interactionCooldown = 1f;
 
         [Flags]
@@ -44,7 +44,7 @@ namespace Gardening
             _interactable.selectExited.AddListener(RestoreCorrectKinematicState);
             _state = FlowerState.All;
             _startingLayer = gameObject.layer;
-            _wasKinematic = _rb.isKinematic;
+            _prevKinematicState = _rb.isKinematic;
         }
 
         private void OnCollisionEnter(Collision other)
@@ -65,8 +65,8 @@ namespace Gardening
             transform.rotation = Quaternion.FromToRotation(Vector3.up, other.GetContact(0).normal);
             transform.rotation *= _startingRotation;
 
-            _rb.isKinematic = true;
-            _wasKinematic = _rb.isKinematic;
+            _prevKinematicState = true;
+            _rb.isKinematic = _prevKinematicState;
             _isAnchored = true;
         }
 
@@ -77,8 +77,8 @@ namespace Gardening
             ToggleAnchoredLayer();
             transform.SetParent(null, true);
 
-            _rb.isKinematic = false;
-            _wasKinematic = _rb.isKinematic;
+            _prevKinematicState = false;
+            _rb.isKinematic = _prevKinematicState;
             _isAnchored = false;
         }
 
@@ -88,7 +88,15 @@ namespace Gardening
         /// </summary>
         private void RestoreCorrectKinematicState(SelectExitEventArgs _)
         {
-            _rb.isKinematic = _rb.isKinematic != _wasKinematic ? _wasKinematic : !_wasKinematic;
+            if (_rb.isKinematic != _prevKinematicState)
+            {
+                _rb.isKinematic = _prevKinematicState;
+            }
+            else
+            {
+                // I feel like something should've gone wrong with this, but it didn't?
+                _rb.isKinematic = false;
+            }
         }
 
         /// <summary>
