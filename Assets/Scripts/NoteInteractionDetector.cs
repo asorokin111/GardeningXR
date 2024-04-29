@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 [RequireComponent(typeof(Collider))]
 public class NoteInteractionDetector: MonoBehaviour
@@ -16,9 +11,6 @@ public class NoteInteractionDetector: MonoBehaviour
     private NewControls _inputActions;
 
     private Collider _boardCollider;
-
-    private float _sphereCheckRadius;
-    private bool _isHanging = false;
 
     private void Start()
     {
@@ -44,7 +36,6 @@ public class NoteInteractionDetector: MonoBehaviour
         if (other.gameObject.CompareTag("CorkBoard"))
         {
             _boardCollider = null;
-            _isHanging = false;
             _grabInteractable.selectExited.RemoveListener(Snap);
         }
     }
@@ -57,21 +48,8 @@ public class NoteInteractionDetector: MonoBehaviour
         transform.rotation = _boardCollider.transform.rotation;
     }
 
-    private void Snap(UnityEngine.XR.Interaction.Toolkit.SelectExitEventArgs args)
+    private void Snap(SelectExitEventArgs args)
     {
-        Debug.Log("Snap");
-        _isHanging = true;
         SetSnapValues();
-        //_grabInteractable.selectExited.AddListener(SnapOrForget);
     }
-    //private void SnapOrForget(UnityEngine.XR.Interaction.Toolkit.SelectExitEventArgs args)
-    //{
-    //    Debug.Log("Snap or Forget");
-    //    Collider[] hitColliders = Physics.OverlapSphere(transform.position, _sphereCheckRadius);
-    //    if (hitColliders.Length > 0 && hitColliders.Contains(_boardCollider) && _isHanging)
-    //    {
-    //        SetSnapValues();
-    //        Debug.Log("HA Ha");
-    //    }
-    //}
 }
