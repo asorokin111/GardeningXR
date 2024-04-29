@@ -18,7 +18,6 @@ public class WaterGun : MonoBehaviour
 	[SerializeField]                private int        magazineCapacity;
 	[SerializeField]                private int        totalAmmoAmount;
 	[GetComponent] [SerializeField] private Animator   animator;
-	[GetComponent] [SerializeField] private FixedJoint fixedJoint;
 	[GetComponent] [SerializeField] private XRGrabInteractable grabInteractable;
 
 	[Header("Bubble properties")] 
@@ -52,23 +51,6 @@ public class WaterGun : MonoBehaviour
 	
 	// called by player
 	public void StopShooting()  => StopCoroutine(_fireCoroutine);
-	
-	// called on select
-	public void AttachToControllerRb(Rigidbody rb)
-	{
-		var snapTransform = rb.gameObject.transform;
-		transform.position       = snapTransform.position;
-		transform.forward        = snapTransform.forward;
-		fixedJoint.connectedBody = rb;
-		grabInteractable.enabled = false;
-	}
-
-	public void SetShootOn(InputActionReference shootAction)
-	{
-		shootAction.action.performed += ctx => StartShooting();
-		shootAction.action.canceled += ctx => StopShooting();
-	}
-
 	private IEnumerator FireCoroutine()
 	{
 		while (true)
