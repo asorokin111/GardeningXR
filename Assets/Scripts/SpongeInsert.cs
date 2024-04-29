@@ -15,6 +15,8 @@ namespace Gardening
     {
         [SerializeField]
         private XRGrabInteractable _interactable;
+        [SerializeField]
+        private Vector3 _startingAngles = Vector3.zero;
         private bool _isAnchored = false;
         private Rigidbody _rb;
         private Quaternion _startingRotation;
@@ -36,7 +38,7 @@ namespace Gardening
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
-            _startingRotation = transform.rotation;
+            _startingRotation = Quaternion.Euler(_startingAngles);
             _interactable = GetComponent<XRGrabInteractable>();
             _interactable.selectEntered.AddListener(Unanchor);
             _interactable.selectExited.AddListener(RestoreCorrectKinematicState);
