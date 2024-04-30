@@ -2,38 +2,71 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
 
-public class WeedMovement : MonoBehaviour
+public class WeedMovement : MonoBehaviour, IDamageable
 {
-    [SerializeField] private Transform _playerTransform;
-    [SerializeField] private float _jumpForce;
+    [Header("Health & Damage")]
+    [SerializeField] private ProgressBar _healthBar; //The UI object that will be places at a real Canvas to gain perfomance
+    [SerializeField] private int _maxHealth;
+                     private float _health;
     [SerializeField] private float _damageRadius;
     [SerializeField] private int _damage;
-    
 
-    [SerializeField, Range(0f, 15f)] private int _secondUntilNextJump;
-    [SerializeField, Range(0f,30f)] private int _secondUntilDeactivation;
     [SerializeField, Range(0f, 10f)] private int _damageFrequency;
-
-    private static WaitForSeconds _waitForNextJump;
     private WaitForSeconds _waitToGiveDamage;
+
+    [Header("Jumping")]
+    [SerializeField] private float _jumpForce;
+    [SerializeField, Range(0f, 15f)] private int _secondUntilNextJump;
+    private static WaitForSeconds _waitForNextJump;
+
+    [Header("Other")]
+    [SerializeField, Range(0f,30f)] private int _secondUntilDeactivation;
+    [SerializeField] private Transform _playerTransform;
+
     private Rigidbody _rb;
 
     private bool _isGrounded;
     private bool _isDetectingCollisions;
     private bool _isAttacking;
 
+    [Header("Test Only")]
+    [SerializeField] private Camera _camera;
+    [SerializeField] private Canvas _canvas;
+
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _waitForNextJump = new WaitForSeconds(_secondUntilNextJump);
         _waitToGiveDamage = new WaitForSeconds(_damageFrequency);
+
+        _health = _maxHealth;
+        SetUpHealthBar(_canvas, _camera);
+
         _isGrounded = true;
-        transform.LookAt(_playerTransform.transform);
         MakeAJump();
+    }
+    public void TakeDamage(int amount)
+    {
+        _health -= amount;
+        _healthBar.SetProgress(_health/_maxHealth);
+        if(_health <= 0)
+        {
+            Destroy(gameObject);
+            Destroy(_healthBar.gameObject);
+        }
+    }
+
+    public void SetUpHealthBar(Canvas canvas, Camera cameraToFace)
+    {
+        _healthBar.transform.SetParent(canvas.transform);
+        _healthBar.GetComponent<FaceCamera>().cameraToLookAt = cameraToFace;
+        _healthBar.SetProgress(_health/ _maxHealth);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -83,18 +116,18 @@ public class WeedMovement : MonoBehaviour
 
     private bool TryFindMainPlantNearby(out MainPlant plant)
     {
-        Collider[] overlaps = Physics.OverlapSphere(transform.position, _damageRadius);
-        if(overlaps.Length != 0 )
-        {
-            foreach(Collider col in overlaps)
-            {
-                if(col.TryGetComponent<MainPlant>(out MainPlant mainPlant))
-                {
-                    plant = mainPlant;
-                    return true;
-                }
-            }
-        }
+        //Collider[] overlaps = Physics.OverlapSphere(transform.position, _damageRadius);
+        //if(overlaps.Length != 0 )
+        //{
+        //    foreach(Collider col in overlaps)
+        //    {
+        //        if(col.TryGetComponent<MainPlant>(out MainPlant mainPlant))
+        //        {
+        //            plant = mainPlant;
+        //            return true;
+        //        }
+        //    }
+        //}
         plant = null;
         return false;
     }
@@ -125,7 +158,7 @@ public class WeedMovement : MonoBehaviour
             {
                 Debug.Log("Found");
                 yield return _waitToGiveDamage;
-                mainPlant.Damage(_damage);
+                mainPlant.TakeDamage(_damage);
             }
             else
                 break;
