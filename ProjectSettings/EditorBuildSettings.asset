@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 87506b0c81523dd4d802b787615904f9
   - enabled: 1
-    path: Assets/Scenes/CompositionLevel.unity
+    path: Assets/Scenes/Level 2.unity
     guid: afed2cdc7463da84ea7b2b5e20155e6c
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 6b7b8c47254c74d44acfee9a5ec1f38f,
