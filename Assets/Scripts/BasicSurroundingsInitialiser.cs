@@ -32,11 +32,12 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
             SpawnAnchor(null);
     }
 
-    public async void SpawnAnchor(BaseInteractionEventArgs args)
+    public async void SpawnAnchor(BaseInteractionEventArgs _)
     {
         interactor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
 
-        Pose hitPos = new Pose(hit.point, Quaternion.LookRotation(hit.normal));
+        var rotation = hit.normal != Vector3.zero ? Quaternion.LookRotation(hit.normal) : Quaternion.identity;
+        Pose hitPos = new Pose(hit.point, rotation);
 
         if (!hit.collider.gameObject.TryGetComponent(out ARPlane plane)) return;
         if (plane.classifications != PlaneClassifications.DoorFrame) return;
