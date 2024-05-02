@@ -12,6 +12,15 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
     public GameObject prefab;
     public InputActionReference inputAction;
 
+    [SerializeField]
+    private SpawnerType _spawnerType = SpawnerType.Anchor;
+
+    private enum SpawnerType
+    {
+        Simple,
+        Anchor,
+    }
+
     private bool _hasBeenSpawned = false;
 
     private void OnEnable()
@@ -28,8 +37,14 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
     private void ReenableDraw(InputAction.CallbackContext ctx)
     {
-        if (!_hasBeenSpawned)
-            SimpleInit(null);
+        if (_hasBeenSpawned) return;
+        switch (_spawnerType)
+        {
+            case SpawnerType.Simple:
+                SimpleInit(); break;
+            case SpawnerType.Anchor:
+                SpawnAnchor(); break;
+        }
     }
 
     private async void SpawnAnchor()
@@ -39,7 +54,10 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
         var hitPose = new Pose(hit.point, Quaternion.LookRotation(hit.normal));
 
         if (!hit.collider.gameObject.TryGetComponent(out ARPlane plane)) return;
-        if (plane.classifications != PlaneClassifications.DoorFrame) return;
+        if (plane.classifications != PlaneClassifications.DoorFrame)
+        {
+            Debug.Log(plane.classifications);
+        }
 
         var result = await anchorManager.TryAddAnchorAsync(hitPose);
         bool success = result.TryGetResult(out ARAnchor anchor);
@@ -51,7 +69,7 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
         _hasBeenSpawned = true;
     }
 
-    private void SimpleInit(BaseInteractionEventArgs _)
+    private void SimpleInit()
     {
         interactor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
 
