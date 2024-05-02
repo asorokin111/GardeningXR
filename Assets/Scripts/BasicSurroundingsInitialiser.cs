@@ -39,7 +39,7 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
         if (hit.collider == null) return;
         Debug.Log("Hit collider check passed");
-        var ob = Instantiate(prefab, GameObject.FindWithTag("Player").transform.position, Quaternion.identity);
+        var ob = Instantiate(prefab, hit.collider.transform.position, Quaternion.identity);
         Debug.Log("Player position: " + GameObject.FindWithTag("Player").transform.position);
         Debug.Log("Prefab position: " + ob.transform.position);
         _hasBeenSpawned = true;
