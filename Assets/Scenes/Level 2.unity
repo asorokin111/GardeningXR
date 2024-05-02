@@ -2314,6 +2314,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342020966}
   m_Mesh: {fileID: -2564423107879867638, guid: 147ae308eec018b40a7b312ae58f44c7, type: 3}
+--- !u!114 &348749907 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4686145776950701477, guid: a92967b4eac7c0348851815aa28b24c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1574807898}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &348793083
 GameObject:
   m_ObjectHideFlags: 0
@@ -5166,7 +5178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactor: {fileID: 1193952825}
-  anchorManager: {fileID: 0}
+  anchorManager: {fileID: 348749907}
   prefab: {fileID: 7495523009076872274, guid: be777d9946ca7f643b0db6f28dd9749a, type: 3}
   inputAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
@@ -5465,6 +5477,11 @@ PrefabInstance:
     - target: {fileID: 864415031682469440, guid: a92967b4eac7c0348851815aa28b24c0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961018525574713406, guid: a92967b4eac7c0348851815aa28b24c0,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1458384193087329190, guid: a92967b4eac7c0348851815aa28b24c0,
