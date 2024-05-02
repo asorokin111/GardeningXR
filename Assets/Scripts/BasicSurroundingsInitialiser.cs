@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class BasicSurroundingsInitialiser : MonoBehaviour
 {
@@ -34,7 +34,15 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
     public async void SpawnAnchor(BaseInteractionEventArgs _)
     {
+        Debug.Log("SpawnAnchor called");
         interactor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
+
+        if (hit.collider == null) return;
+        Debug.Log("Hit collider check passed");
+        var ob = Instantiate(prefab, GameObject.FindWithTag("Player").transform.position, Quaternion.identity);
+        Debug.Log("Player position: " + GameObject.FindWithTag("Player").transform.position);
+        Debug.Log("Prefab position: " + ob.transform.position);
+        _hasBeenSpawned = true;
 
         var rotation = hit.normal != Vector3.zero ? Quaternion.LookRotation(hit.normal) : Quaternion.identity;
         Pose hitPos = new Pose(hit.point, rotation);
@@ -46,9 +54,7 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
         bool success = result.TryGetResult(out ARAnchor anchor);
 
         if (!success) return;
-
-        Instantiate(prefab, anchor.pose.position, Quaternion.identity);
-
-        _hasBeenSpawned = true;
+        Debug.Log("Success = true");
+        
     }
 }
