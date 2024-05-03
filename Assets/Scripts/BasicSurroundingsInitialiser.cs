@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class BasicSurroundingsInitialiser : MonoBehaviour
 {
@@ -11,6 +11,15 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
     public ARAnchorManager anchorManager;
     public GameObject prefab;
     public InputActionReference inputAction;
+
+    [SerializeField]
+    private SpawnerType _spawnerType = SpawnerType.Anchor;
+
+    private enum SpawnerType
+    {
+        Simple,
+        Anchor,
+    }
 
     private bool _hasBeenSpawned = false;
 
@@ -28,27 +37,43 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
     private void ReenableDraw(InputAction.CallbackContext ctx)
     {
-        if (!_hasBeenSpawned)
-            SpawnAnchor(null);
+        if (_hasBeenSpawned) return;
+        switch (_spawnerType)
+        {
+            case SpawnerType.Simple:
+                SimpleInit(); break;
+            case SpawnerType.Anchor:
+                SpawnAnchor(); break;
+        }
     }
 
-    public async void SpawnAnchor(BaseInteractionEventArgs _)
+    private async void SpawnAnchor()
     {
         interactor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
 
-        var rotation = hit.normal != Vector3.zero ? Quaternion.LookRotation(hit.normal) : Quaternion.identity;
-        Pose hitPos = new Pose(hit.point, rotation);
+        var rotation = (hit.normal == Vector3.zero) ? Quaternion.identity : Quaternion.LookRotation(hit.normal);
+        var hitPose = new Pose(hit.point, rotation);
 
         if (!hit.collider.gameObject.TryGetComponent(out ARPlane plane)) return;
         if (plane.classifications != PlaneClassifications.DoorFrame) return;
 
-        var result = await anchorManager.TryAddAnchorAsync(hitPos);
+        var result = await anchorManager.TryAddAnchorAsync(hitPose);
         bool success = result.TryGetResult(out ARAnchor anchor);
 
         if (!success) return;
 
         Instantiate(prefab, anchor.pose.position, Quaternion.identity);
 
+        _hasBeenSpawned = true;
+    }
+
+    private void SimpleInit()
+    {
+        interactor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
+
+        if (hit.collider == null) return;
+
+        Instantiate(prefab, hit.collider.transform.position, Quaternion.identity);
         _hasBeenSpawned = true;
     }
 }
