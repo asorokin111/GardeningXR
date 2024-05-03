@@ -51,13 +51,11 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
     {
         interactor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
 
-        var hitPose = new Pose(hit.point, Quaternion.LookRotation(hit.normal));
+        var rotation = (hit.normal == Vector3.zero) ? Quaternion.identity : Quaternion.LookRotation(hit.normal);
+        var hitPose = new Pose(hit.point, rotation);
 
         if (!hit.collider.gameObject.TryGetComponent(out ARPlane plane)) return;
-        if (plane.classifications != PlaneClassifications.DoorFrame)
-        {
-            Debug.Log(plane.classifications);
-        }
+        if (plane.classifications != PlaneClassifications.DoorFrame) return;
 
         var result = await anchorManager.TryAddAnchorAsync(hitPose);
         bool success = result.TryGetResult(out ARAnchor anchor);
