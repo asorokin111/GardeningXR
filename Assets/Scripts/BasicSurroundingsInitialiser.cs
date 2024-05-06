@@ -24,17 +24,17 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
     private void OnEnable()
     {
-        inputAction.action.performed += ReenableDraw;
-        inputAction.action.canceled += ReenableDraw;
+        inputAction.action.performed += PlaceSurroundings;
+        inputAction.action.canceled += PlaceSurroundings;
     }
 
     private void OnDisable()
     {
-        inputAction.action.performed -= ReenableDraw;
-        inputAction.action.canceled -= ReenableDraw;
+        inputAction.action.performed -= PlaceSurroundings;
+        inputAction.action.canceled -= PlaceSurroundings;
     }
 
-    private void ReenableDraw(InputAction.CallbackContext ctx)
+    private void PlaceSurroundings(InputAction.CallbackContext ctx)
     {
         if (_hasBeenSpawned) return;
         switch (_spawnerType)
@@ -64,6 +64,8 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
         Instantiate(prefab, anchor.pose.position, Quaternion.identity);
 
         _hasBeenSpawned = true;
+
+        GameManager.Instance.ChangeGameState(GameState.Playing);
     }
 
     private void SimpleInit()

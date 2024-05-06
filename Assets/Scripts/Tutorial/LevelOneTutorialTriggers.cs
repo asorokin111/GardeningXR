@@ -40,6 +40,7 @@ public class LevelOneTutorialTriggers : MonoBehaviour
     private void PlantGrownEventHandler()
     {
         CheckStateAndPrintNext((int)TutorialStates.PlantGrown - 1);
+        GameManager.Instance.ChangeGameState(GameState.Win);
     }
 
     private void CheckStateAndPrintNext(int desiredState)
