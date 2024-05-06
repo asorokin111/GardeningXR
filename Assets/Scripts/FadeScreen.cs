@@ -52,6 +52,5 @@ public class FadeScreen : MonoBehaviour
         newColor2.a = alphaOut;
 
         _renderer.material.SetColor("_BaseColor", newColor2);
-
     }
 }
