@@ -13,15 +13,13 @@ public class SceneTutorial : MonoBehaviour
 
     [Header("Tutorial contents")]
     [SerializeField]
-    private List<TutorialPhrase> _tutorialPhrasesList = new List<TutorialPhrase>();
-    private Queue<TutorialPhrase> _tutorialPhrases = new Queue<TutorialPhrase>();
+    private List<TutorialPhrase> _tutorialPhrasesList = new();
+    private Queue<TutorialPhrase> _tutorialPhrases = new();
 
     [Header("Tutorial parameters")]
     [SerializeField]
     private float _timeUntilNextPhrase;
-    private WaitForSeconds _waitNextPhrase;
 
-    private bool _isInitialized = false;
     private bool _isCurrentlyPrintingPhrase = false;
 
     private void Awake()
@@ -40,15 +38,10 @@ public class SceneTutorial : MonoBehaviour
 
     private void Start()
     {
-        if (_isInitialized) return;
-
         for (int i = 0; i < _tutorialPhrasesList.Count; i++)
         {
             _tutorialPhrases.Enqueue(_tutorialPhrasesList[i]);
         }
-
-        _isInitialized = true;
-        _waitNextPhrase = new WaitForSeconds(_timeUntilNextPhrase);
         PlayTutorial();
     }
 
@@ -65,7 +58,7 @@ public class SceneTutorial : MonoBehaviour
             {
                 StartCoroutine(PrintNextPhrase());
             }
-            yield return _waitNextPhrase;
+            yield return new WaitForSeconds(_timeUntilNextPhrase);
         }
     }
 
