@@ -61,7 +61,7 @@ public class SceneTutorial : MonoBehaviour
     {
         while (true)
         {
-            if (!_isCurrentlyPrintingPhrase && _tutorialPhrases.Peek().isFillerText)
+            if (_tutorialPhrases.Peek().isFillerText)
             {
                 StartCoroutine(PrintNextPhrase());
             }
@@ -71,7 +71,7 @@ public class SceneTutorial : MonoBehaviour
 
     public IEnumerator PrintNextPhrase()
     {
-        if (_isCurrentlyPrintingPhrase)
+        while (_isCurrentlyPrintingPhrase)
         {
             yield return null;
         }
