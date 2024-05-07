@@ -1,0 +1,7 @@
+- Different pots
+- break pots to parts
+- Fix ground
+- water
+- spiders
+- flies
+- other

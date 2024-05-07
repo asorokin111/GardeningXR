@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7408654010665948560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6731413656749221312}
+  - component: {fileID: 498842733835699018}
+  - component: {fileID: 5090828292738482797}
+  m_Layer: 0
+  m_Name: SceneTutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6731413656749221312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7408654010665948560}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.39344558, y: 1.9493924, z: 0.70766413}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &498842733835699018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7408654010665948560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e470c18464c9f49a54b86b1b2ce178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 0}
+  _tutorialPhrasesList:
+  - text: Hei! Tervetuloa puutarhanhoito-oppaaseen.
+    phraseTypingDuration: 2
+    isFillerText: 1
+  - text: "T\xE4m\xE4n p\xE4iv\xE4n aiheena ovat kasvit"
+    phraseTypingDuration: 1
+    isFillerText: 1
+  - text: "Sinun pit\xE4isi n\xE4hd\xE4 edess\xE4si ruukku. Yrit\xE4 nostaa sit\xE4
+      yl\xF6s."
+    phraseTypingDuration: 2
+    isFillerText: 1
+  - text: "Toivottavasti et rikkonut sit\xE4, mutta jos rikoit, paina p\xF6yd\xE4n
+      vasemmalla puolella olevaa nappia saadaksesi uuden."
+    phraseTypingDuration: 5
+    isFillerText: 1
+  - text: "Yrit\xE4 nyt nostaa multapaketti ja kaada se ruukkuun"
+    phraseTypingDuration: 2
+    isFillerText: 1
+  - text: "Hyv\xE4\xE4 ty\xF6t\xE4!"
+    phraseTypingDuration: 1
+    isFillerText: 0
+  - text: Seuraavaksi sinun on nostettava siemenpakkaus.
+    phraseTypingDuration: 2
+    isFillerText: 1
+  - text: "Valitse mit\xE4 haluat! Kaada se sitten ruukkuun"
+    phraseTypingDuration: 2
+    isFillerText: 1
+  - text: Erinomaista!
+    phraseTypingDuration: 1
+    isFillerText: 0
+  - text: Nyt kastellaan pienet siemenemme.
+    phraseTypingDuration: 1
+    isFillerText: 1
+  - text: Ota kastelukannu ja kastele siemen.
+    phraseTypingDuration: 1
+    isFillerText: 1
+  - text: "Katsokaa t\xE4t\xE4 kaunista kukkaa!"
+    phraseTypingDuration: 1
+    isFillerText: 0
+  - text: Varokaa! Jos rikot ruukun, kukka tuhoutuu.
+    phraseTypingDuration: 2
+    isFillerText: 1
+  - text: "Nyt kun tied\xE4t, miten kukkia kasvatetaan, voit kokeilla sit\xE4 itse!"
+    phraseTypingDuration: 3
+    isFillerText: 1
+  _timeUntilNextPhrase: 5
+--- !u!114 &5090828292738482797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7408654010665948560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b592abe8abb8245bcadcc013f03940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
