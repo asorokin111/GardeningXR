@@ -4,16 +4,17 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance { get { return _instance; } }
+
     [SerializeField] private AudioSource _sfxSource;
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioMixer _audioMixer;
-
-    private static AudioManager _instance;
-    public static AudioManager Instance { get { return _instance; } }
-
     [SerializeField] private AudioData _audioData;
 
-    private Dictionary<string, AudioClip> _audios = new Dictionary<string, AudioClip>();
+    private static AudioManager _instance;
+
+
+    private Dictionary<string, AudioClip> _audios = new();
 
     public const string MUSIC_VOLUME_KEY = "musicVolume";
     public const string SFX_VOLUME_KEY = "sfxVolume";
@@ -36,41 +37,42 @@ public class AudioManager : MonoBehaviour
     {
         foreach (var obj in _audioData.AudioObjects)
         {
-            string remake = obj.audioName.ToLower().Trim(); // clear (no whitespaces, no uppercase) version of AudioCLip name
-            if (_audios.ContainsKey(remake))
+            var processedName = obj.audioName.ToLower().Trim(); // clear (no whitespaces, no uppercase) version of AudioCLip name
+            if (_audios.ContainsKey(processedName))
                 continue;
-            _audios.Add(remake, obj.audioClip);
+            _audios.Add(processedName, obj.audioClip);
         }
     }
 
     /// <summary>
     /// NOT case or whitespaces sensitive param
     /// </summary>
-    /// <param name="audioName"></param>
     private AudioClip GetAudio(string audioName)
     {
-        string remake = audioName.ToLower().Trim(); // clear (no whitespaces, no uppercase) version of AudioCLip name
-        if (_audios.TryGetValue(remake, out AudioClip clip))
-        {
-            return clip;
-        }
-        else
-            return null;
-    }
-    public void PlaySFX(string audioName)
-    {
-        _sfxSource.clip = (GetAudio(audioName));
-        if (_sfxSource.clip != null)
-            _sfxSource.Play();
-    }
-    public void PlayMusic(string audioName)
-    {
-        _musicSource.clip = (GetAudio(audioName));
-        if (_musicSource.clip != null)
-            _musicSource.Play();
+        var processedName = audioName.ToLower().Trim(); // clear (no whitespaces, no uppercase) version of AudioClip name
+        return _audios.GetValueOrDefault(processedName);
     }
 
-    public void StopPlayMusic()
+    public enum SoundType
+    {
+        SFX,
+        Music,
+    }
+
+    public void PlaySound(string audioName, SoundType soundType)
+    {
+        AudioSource source = soundType switch
+        {
+            SoundType.SFX => _sfxSource,
+            SoundType.Music => _musicSource,
+            _ => _sfxSource,
+        };
+        source.clip = GetAudio(audioName);
+        if (source.clip != null)
+            source.Play();
+    }
+
+    public void StopMusic()
     {
         _musicSource.Stop();
     }
