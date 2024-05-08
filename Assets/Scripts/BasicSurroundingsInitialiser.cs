@@ -77,7 +77,7 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
         if (hit.collider == null) return;
 
-        Instantiate(prefab, hit.collider.transform.position, Quaternion.identity);
+        Instantiate(prefab, hit.collider.transform.position, Quaternion.Euler(_startingRotation));
         _hasBeenSpawned = true;
     }
 }
