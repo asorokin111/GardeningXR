@@ -728,6 +728,141 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 356090908629009524, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 356090908629009524, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 356090908629009524, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 356090908629009524, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 356090908629009524, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 356090908629009524, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _text
+      value: 
+      objectReference: {fileID: 3768920632931129279}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[0].text
+      value: Hei taas!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[1].text
+      value: "Istutamme kukkia t\xE4ll\xE4 tasolla."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[2].text
+      value: "Hyv\xE4\xE4 ty\xF6t\xE4! Nyt katso p\xF6yd\xE4n oikealle puolelle,
+        siell\xE4 on laatikko t\xE4ynn\xE4 kauniita kukkia. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[3].text
+      value: "Ota yksi kukka ja aseta se kimpunpitimeen. Katsotaan, mit\xE4 tapahtuu.
+        (odotan)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[4].text
+      value: "Ensimm\xE4inen kukka on laitettu! K\xE4yt\xE4 samaa tekniikkaa tehd\xE4ksesi
+        kauniin kukkakimppusommitelman."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[5].text
+      value: Napsauta punaista painiketta, jos haluat uuden kimppupidikkeen (vanhaa
+        ei poisteta).
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[6].text
+      value: "Ota yksi kukka ja aseta se kimpunpitimeen. Katsotaan, mit\xE4 tapahtuu.
+        (odotan)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[2].isFillerText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[3].isFillerText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[4].isFillerText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[5].isFillerText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[1].phraseTypingDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[2].phraseTypingDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[3].phraseTypingDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[4].phraseTypingDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[5].phraseTypingDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946215601440294406, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[6].phraseTypingDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982398480338113894, guid: be777d9946ca7f643b0db6f28dd9749a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7095158527262639873, guid: be777d9946ca7f643b0db6f28dd9749a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -786,13 +921,25 @@ PrefabInstance:
     - target: {fileID: 7495523009076872274, guid: be777d9946ca7f643b0db6f28dd9749a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be777d9946ca7f643b0db6f28dd9749a, type: 3}
+--- !u!114 &3768920632931129279 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5382555590484153177, guid: be777d9946ca7f643b0db6f28dd9749a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3768920632931129278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
