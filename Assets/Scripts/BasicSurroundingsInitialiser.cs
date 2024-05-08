@@ -12,6 +12,9 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
     public InputActionReference inputAction;
 
     [SerializeField]
+    private Vector3 _startingRotation = Vector3.zero;
+
+    [SerializeField]
     private SpawnerType _spawnerType = SpawnerType.Anchor;
 
     private enum SpawnerType
@@ -61,7 +64,7 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
         if (!success) return;
 
-        Instantiate(prefab, anchor.pose.position, Quaternion.identity);
+        Instantiate(prefab, anchor.pose.position, Quaternion.Euler(_startingRotation));
 
         _hasBeenSpawned = true;
 
