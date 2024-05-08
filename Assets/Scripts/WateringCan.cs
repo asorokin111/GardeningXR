@@ -1,4 +1,3 @@
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public sealed class WateringCan : ParticleDropper
@@ -18,7 +17,7 @@ public sealed class WateringCan : ParticleDropper
 
     private void OnEnable()
     {
-        _interactable.firstSelectEntered.AddListener((SelectEnterEventArgs _) => {
+        _interactable.firstSelectEntered.AddListener((_) => {
             if (_alreadyPickedUp) return;
             OnWateringCanFirstPickedUp?.Invoke();
             _alreadyPickedUp = false;

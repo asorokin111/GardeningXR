@@ -548,6 +548,7 @@ MonoBehaviour:
   prefab: {fileID: 7495523009076872274, guid: be777d9946ca7f643b0db6f28dd9749a, type: 3}
   inputAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
+  _startingRotation: {x: 0, y: 180, z: 0}
   _spawnerType: 1
 --- !u!4 &1348539579
 Transform:
