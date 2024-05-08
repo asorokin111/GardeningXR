@@ -26,7 +26,7 @@ public class DirtPacket : ParticleDropper
 
     private void OnEnable()
     {
-        _interactable.firstSelectEntered.AddListener((SelectEnterEventArgs _) => {
+        _interactable.firstSelectEntered.AddListener((_) => {
             if (_alreadyPickedUp) return;
             OnDirtPacketFirstPickedUp?.Invoke();
             _alreadyPickedUp = true;
