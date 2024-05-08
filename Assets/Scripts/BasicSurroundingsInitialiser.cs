@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation;
@@ -16,6 +17,7 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
     [SerializeField]
     private SpawnerType _spawnerType = SpawnerType.Anchor;
+    private Action _spawnMethod;
 
     private enum SpawnerType
     {
@@ -24,6 +26,16 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
     }
 
     private bool _hasBeenSpawned = false;
+
+    private void Awake()
+    {
+        _spawnMethod = _spawnerType switch
+        {
+            SpawnerType.Simple => SimpleInit,
+            SpawnerType.Anchor => SpawnAnchor,
+            _ => throw new NotSupportedException(),
+        };
+    }
 
     private void OnEnable()
     {
@@ -40,13 +52,7 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
     private void PlaceSurroundings(InputAction.CallbackContext ctx)
     {
         if (_hasBeenSpawned) return;
-        switch (_spawnerType)
-        {
-            case SpawnerType.Simple:
-                SimpleInit(); break;
-            case SpawnerType.Anchor:
-                SpawnAnchor(); break;
-        }
+        _spawnMethod();
     }
 
     private async void SpawnAnchor()
