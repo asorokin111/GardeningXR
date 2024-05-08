@@ -1,6 +1,5 @@
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace Gardening
 {
@@ -35,7 +34,7 @@ namespace Gardening
 
         private void OnEnable()
         {
-            _interactable.firstSelectEntered.AddListener((SelectEnterEventArgs _) => {
+            _interactable.firstSelectEntered.AddListener((_) => {
                 if (_alreadyPickedUp) return;
                 OnSeedPacketFirstPickedUp?.Invoke();
                 _alreadyPickedUp = true;
