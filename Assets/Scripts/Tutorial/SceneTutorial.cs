@@ -19,6 +19,9 @@ public class SceneTutorial : MonoBehaviour
     [Header("Tutorial parameters")]
     [SerializeField]
     private float _timeUntilNextPhrase;
+    [SerializeField]
+    [Tooltip("How many seconds to wait for each character typed")]
+    private float _waitPerCharacter;
 
     private bool _isCurrentlyPrintingPhrase = false;
 
@@ -71,7 +74,7 @@ public class SceneTutorial : MonoBehaviour
         _isCurrentlyPrintingPhrase = true;
         var nextPhrase = _tutorialPhrases.Dequeue();
         _text.text = "";
-        var waitUntilNextChar = new WaitForSeconds(nextPhrase.phraseTypingDuration / nextPhrase.text.Length);
+        var waitUntilNextChar = new WaitForSeconds(_waitPerCharacter);
         foreach (char c in nextPhrase.text)
         {
             yield return waitUntilNextChar;
