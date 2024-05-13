@@ -13,6 +13,8 @@ namespace Gardening
     [RequireComponent(typeof(Rigidbody))]
     public class SpongeInsert : MonoBehaviour
     {
+        public delegate void FlowerPlantedAction();
+        public static FlowerPlantedAction OnFlowerPlanted;
         [SerializeField]
         private XRGrabInteractable _interactable;
         [SerializeField]
@@ -68,6 +70,7 @@ namespace Gardening
             _prevKinematicState = true;
             _rb.isKinematic = _prevKinematicState;
             _isAnchored = true;
+            OnFlowerPlanted?.Invoke();
         }
 
         private void Unanchor(SelectEnterEventArgs _)

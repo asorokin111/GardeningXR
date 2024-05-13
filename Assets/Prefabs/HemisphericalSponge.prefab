@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 125077221362614294}
   - component: {fileID: 6031477000762187144}
   - component: {fileID: 690366890518474285}
+  - component: {fileID: 6694973670684916568}
   m_Layer: 12
   m_Name: HemisphericalSponge
   m_TagString: Sponge
@@ -206,6 +207,18 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+--- !u!114 &6694973670684916568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7205454636193727283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19204e4eccaa984d828d1ee2ab5e905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3424788728336442683
 PrefabInstance:
   m_ObjectHideFlags: 0
