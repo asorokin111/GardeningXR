@@ -18,6 +18,7 @@ public class Bubble : MonoBehaviour
 
 	private void OnCollisionEnter(Collision other)
 	{
+		Debug.Log(other.gameObject.name);
 		_onCollisionAction(this);
 	}
 
