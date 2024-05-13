@@ -151,3 +151,4 @@ MonoBehaviour:
   rb: {fileID: 5059676087294780508}
   radius: 0.2
   perlinNoiseDelta: 0.5
+  damage: 10

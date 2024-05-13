@@ -10,15 +10,21 @@ public class Bubble : MonoBehaviour
 	[GetComponent] [SerializeField] private Rigidbody rb;
 	[SerializeField]                private float     radius;
 	[SerializeField]                private float     perlinNoiseDelta;
-	
-	private Action<Bubble> _onCollisionAction;
+    [SerializeField]				private	int		  damage;
+
+    private Action<Bubble> _onCollisionAction;
 	
 	private Vector3 _shotDirection;
 	private float   _speed;
 
 	private void OnCollisionEnter(Collision other)
 	{
-		Debug.Log(other.gameObject.name);
+        Debug.Log(other.gameObject.name);
+        if (other.gameObject.CompareTag("WeedEnemy"))
+		{
+			Debug.Log("Found Enemy!");
+			other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+		}
 		_onCollisionAction(this);
 	}
 
