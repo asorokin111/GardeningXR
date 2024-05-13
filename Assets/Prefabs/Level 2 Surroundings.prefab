@@ -292,21 +292,74 @@ PrefabInstance:
     - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
         type: 3}
       propertyPath: _tutorialPhrasesList.Array.size
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
         type: 3}
       propertyPath: _tutorialPhrasesList.Array.data[0].text
-      value: Hi
+      value: Hei taas!
       objectReference: {fileID: 0}
     - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
         type: 3}
       propertyPath: _tutorialPhrasesList.Array.data[1].text
-      value: Example
+      value: "Teemme kukka-asetelmia t\xE4ll\xE4 tasolla!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[2].text
+      value: "Teemme kukka-asetelmia t\xE4ll\xE4 tasolla!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[3].text
+      value: "P\xF6yd\xE4ll\xE4 n\xE4kyi vihre\xE4 juttu. Se on kukkavaahtoa."
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[4].text
+      value: Voit napata sen oikealla kontrollerilla.
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[5].text
+      value: "Hyv\xE4\xE4 ty\xF6t\xE4! Nyt katso p\xF6yd\xE4n oikealle puolelle,
+        siell\xE4 on laatikko t\xE4ynn\xE4 kauniita kukkia."
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[6].text
+      value: "Ota yksi kukka ja aseta se kukkavaahtoon. Katsotaan, mit\xE4 tapahtuu!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[7].text
+      value: "Hienoa! Ensimm\xE4inen kukka on nyt pystyss\xE4! K\xE4yt\xE4 samaa
+        tekniikkaa tehd\xE4ksesi kauniin kukka-asetelman."
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[8].text
+      value: Napsauta punaista painiketta, jos haluat uuden kukkavaahdon (vanhaa
+        ei poisteta).
       objectReference: {fileID: 0}
     - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
         type: 3}
       propertyPath: _tutorialPhrasesList.Array.data[5].isFillerText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[6].isFillerText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[7].isFillerText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[8].isFillerText
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6731413656749221312, guid: e63c98a46aecf1d47bb32d51e397c2df,
