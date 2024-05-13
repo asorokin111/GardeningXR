@@ -7,6 +7,8 @@ public class SceneTutorial : MonoBehaviour
 {
     public static SceneTutorial instance;
 
+    public bool isCurrentlyPrintingPhrase = false;
+    public bool nextIsTrigger = false;
     [Header("UI")]
     [SerializeField]
     private TMP_Text _text;
@@ -22,8 +24,6 @@ public class SceneTutorial : MonoBehaviour
     [SerializeField]
     [Tooltip("How many seconds to wait for each character typed")]
     private float _waitPerCharacter;
-
-    private bool _isCurrentlyPrintingPhrase = false;
 
     private void Awake()
     {
@@ -59,19 +59,25 @@ public class SceneTutorial : MonoBehaviour
         {
             if (_tutorialPhrases.Peek().isFillerText)
             {
+                nextIsTrigger = false;
                 StartCoroutine(PrintNextPhrase());
             }
+            else
+            {
+                nextIsTrigger = true;
+            }
+            yield return new WaitUntil(() => isCurrentlyPrintingPhrase == false);
             yield return new WaitForSeconds(_timeUntilNextPhrase);
         }
     }
 
     public IEnumerator PrintNextPhrase()
     {
-        while (_isCurrentlyPrintingPhrase)
+        while (isCurrentlyPrintingPhrase)
         {
             yield return null;
         }
-        _isCurrentlyPrintingPhrase = true;
+        isCurrentlyPrintingPhrase = true;
         var nextPhrase = _tutorialPhrases.Dequeue();
         _text.text = "";
         var waitUntilNextChar = new WaitForSeconds(_waitPerCharacter);
@@ -80,6 +86,6 @@ public class SceneTutorial : MonoBehaviour
             yield return waitUntilNextChar;
             _text.text += c;
         }
-        _isCurrentlyPrintingPhrase = false;
+        isCurrentlyPrintingPhrase = false;
     }
 }

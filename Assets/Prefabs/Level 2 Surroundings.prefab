@@ -328,8 +328,7 @@ PrefabInstance:
     - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
         type: 3}
       propertyPath: _tutorialPhrasesList.Array.data[6].text
-      value: "Hienoa! Ensimm\xE4inen kukka on nyt pystyss\xE4! K\xE4yt\xE4 samaa
-        tekniikkaa tehd\xE4ksesi kauniin kukka-asetelman."
+      value: "K\xE4yt\xE4 samaa tekniikkaa tehd\xE4ksesi kauniin kukka-asetelman."
       objectReference: {fileID: 0}
     - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
         type: 3}

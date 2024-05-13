@@ -1,4 +1,5 @@
 using Gardening;
+using System.Collections;
 using UnityEngine;
 
 public class LevelTwoTutorialTriggers : MonoBehaviour
@@ -26,7 +27,6 @@ public class LevelTwoTutorialTriggers : MonoBehaviour
 
     private void FoamGrabbedEventHandler()
     {
-        Debug.Log("Sponge event handler called");
         CheckStateAndPrintNext((int)TutorialStates.FoamGrabbed - 1);
     }
 
@@ -38,12 +38,20 @@ public class LevelTwoTutorialTriggers : MonoBehaviour
 
     private void CheckStateAndPrintNext(int desiredState)
     {
-        Debug.Log($"Current state: {_currentState}, Needed state: {desiredState}");
         if (_currentState == desiredState)
         {
             ++_currentState;
-            NextPhrase();
+            StartCoroutine(TriggerPhrase());
         }
+    }
+
+    private IEnumerator TriggerPhrase()
+    {
+        while (!SceneTutorial.instance.nextIsTrigger)
+        {
+            yield return null;
+        }
+        NextPhrase();
     }
 
     private void NextPhrase()
