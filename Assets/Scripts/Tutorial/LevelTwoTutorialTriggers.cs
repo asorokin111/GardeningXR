@@ -47,10 +47,7 @@ public class LevelTwoTutorialTriggers : MonoBehaviour
 
     private IEnumerator TriggerPhrase()
     {
-        while (!SceneTutorial.instance.nextIsTrigger)
-        {
-            yield return null;
-        }
+        yield return new WaitUntil(() => SceneTutorial.instance.nextIsTrigger);
         NextPhrase();
     }
 

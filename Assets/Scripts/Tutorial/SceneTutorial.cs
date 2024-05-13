@@ -73,10 +73,7 @@ public class SceneTutorial : MonoBehaviour
 
     public IEnumerator PrintNextPhrase()
     {
-        while (isCurrentlyPrintingPhrase)
-        {
-            yield return null;
-        }
+        yield return new WaitUntil(() => !isCurrentlyPrintingPhrase);
         isCurrentlyPrintingPhrase = true;
         var nextPhrase = _tutorialPhrases.Dequeue();
         _text.text = "";
