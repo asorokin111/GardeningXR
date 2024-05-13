@@ -1,9 +1,6 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 class GrassRender : MonoBehaviour
 {

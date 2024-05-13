@@ -1,18 +1,14 @@
-using System.Collections.Generic;
-using System.Linq;
 using Nrjwolf.Tools.AttachAttributes;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class LianePlacing : MonoBehaviour
 {
 	[SerializeField] private int lianesCount;
-	[GetComponent] [SerializeField] private ARPlaneManager 	 arPlaneManager;
-	[GetComponent] [SerializeField] private LianeMeshGenerator   lianeMeshGenerator;
+	[GetComponent] [SerializeField] private ARPlaneManager arPlaneManager;
+	[GetComponent] [SerializeField] private LianeMeshGenerator lianeMeshGenerator;
 	
 	private void Start()
 	{

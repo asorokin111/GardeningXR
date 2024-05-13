@@ -13,15 +13,16 @@ public class SceneTutorial : MonoBehaviour
 
     [Header("Tutorial contents")]
     [SerializeField]
-    private List<TutorialPhrase> _tutorialPhrasesList = new List<TutorialPhrase>();
-    private Queue<TutorialPhrase> _tutorialPhrases = new Queue<TutorialPhrase>();
+    private List<TutorialPhrase> _tutorialPhrasesList = new();
+    private Queue<TutorialPhrase> _tutorialPhrases = new();
 
     [Header("Tutorial parameters")]
     [SerializeField]
     private float _timeUntilNextPhrase;
-    private WaitForSeconds _waitNextPhrase;
+    [SerializeField]
+    [Tooltip("How many seconds to wait for each character typed")]
+    private float _waitPerCharacter;
 
-    private bool _isInitialized = false;
     private bool _isCurrentlyPrintingPhrase = false;
 
     private void Awake()
@@ -40,15 +41,10 @@ public class SceneTutorial : MonoBehaviour
 
     private void Start()
     {
-        if (_isInitialized) return;
-
         for (int i = 0; i < _tutorialPhrasesList.Count; i++)
         {
             _tutorialPhrases.Enqueue(_tutorialPhrasesList[i]);
         }
-
-        _isInitialized = true;
-        _waitNextPhrase = new WaitForSeconds(_timeUntilNextPhrase);
         PlayTutorial();
     }
 
@@ -61,24 +57,24 @@ public class SceneTutorial : MonoBehaviour
     {
         while (true)
         {
-            if (!_isCurrentlyPrintingPhrase && _tutorialPhrases.Peek().isFillerText)
+            if (_tutorialPhrases.Peek().isFillerText)
             {
                 StartCoroutine(PrintNextPhrase());
             }
-            yield return _waitNextPhrase;
+            yield return new WaitForSeconds(_timeUntilNextPhrase);
         }
     }
 
     public IEnumerator PrintNextPhrase()
     {
-        if (_isCurrentlyPrintingPhrase)
+        while (_isCurrentlyPrintingPhrase)
         {
             yield return null;
         }
         _isCurrentlyPrintingPhrase = true;
         var nextPhrase = _tutorialPhrases.Dequeue();
         _text.text = "";
-        var waitUntilNextChar = new WaitForSeconds(nextPhrase.phraseTypingDuration / nextPhrase.text.Length);
+        var waitUntilNextChar = new WaitForSeconds(_waitPerCharacter);
         foreach (char c in nextPhrase.text)
         {
             yield return waitUntilNextChar;

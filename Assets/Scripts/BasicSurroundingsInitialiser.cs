@@ -1,8 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class BasicSurroundingsInitialiser : MonoBehaviour
@@ -13,7 +13,11 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
     public InputActionReference inputAction;
 
     [SerializeField]
+    private Vector3 _startingRotation = Vector3.zero;
+
+    [SerializeField]
     private SpawnerType _spawnerType = SpawnerType.Anchor;
+    private Action _spawnMethod;
 
     private enum SpawnerType
     {
@@ -23,28 +27,32 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
     private bool _hasBeenSpawned = false;
 
+    private void Awake()
+    {
+        _spawnMethod = _spawnerType switch
+        {
+            SpawnerType.Simple => SimpleInit,
+            SpawnerType.Anchor => SpawnAnchor,
+            _ => throw new NotSupportedException(),
+        };
+    }
+
     private void OnEnable()
     {
-        inputAction.action.performed += ReenableDraw;
-        inputAction.action.canceled += ReenableDraw;
+        inputAction.action.performed += PlaceSurroundings;
+        inputAction.action.canceled += PlaceSurroundings;
     }
 
     private void OnDisable()
     {
-        inputAction.action.performed -= ReenableDraw;
-        inputAction.action.canceled -= ReenableDraw;
+        inputAction.action.performed -= PlaceSurroundings;
+        inputAction.action.canceled -= PlaceSurroundings;
     }
 
-    private void ReenableDraw(InputAction.CallbackContext ctx)
+    private void PlaceSurroundings(InputAction.CallbackContext ctx)
     {
         if (_hasBeenSpawned) return;
-        switch (_spawnerType)
-        {
-            case SpawnerType.Simple:
-                SimpleInit(); break;
-            case SpawnerType.Anchor:
-                SpawnAnchor(); break;
-        }
+        _spawnMethod();
     }
 
     private async void SpawnAnchor()
@@ -62,9 +70,11 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
         if (!success) return;
 
-        Instantiate(prefab, anchor.pose.position, Quaternion.identity);
+        Instantiate(prefab, anchor.pose.position, Quaternion.Euler(_startingRotation));
 
         _hasBeenSpawned = true;
+
+        GameManager.Instance.ChangeGameState(GameState.Playing);
     }
 
     private void SimpleInit()
@@ -73,7 +83,7 @@ public class BasicSurroundingsInitialiser : MonoBehaviour
 
         if (hit.collider == null) return;
 
-        Instantiate(prefab, hit.collider.transform.position, Quaternion.identity);
+        Instantiate(prefab, hit.collider.transform.position, Quaternion.Euler(_startingRotation));
         _hasBeenSpawned = true;
     }
 }

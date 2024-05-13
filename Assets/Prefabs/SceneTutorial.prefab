@@ -92,6 +92,7 @@ MonoBehaviour:
     phraseTypingDuration: 3
     isFillerText: 1
   _timeUntilNextPhrase: 5
+  _waitPerCharacter: 0.1
 --- !u!114 &5090828292738482797
 MonoBehaviour:
   m_ObjectHideFlags: 0
