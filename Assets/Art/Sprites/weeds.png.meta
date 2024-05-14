@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: dbcc31ef5891cf04a94bff892cfc1d4a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 254
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: weeds_0
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1632
+        width: 30
+        height: 259
+      alignment: 9
+      pivot: {x: 0.500002, y: 0.02528505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6dccc70d27bcb40bf4915b34b67623
+      internalID: -937928760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_1
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 1840
+        width: 119
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c6a4d5d5255764db2b0bb37e4e15a9
+      internalID: 1472669851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_2
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 1866
+        width: 102
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb85bda22b209914e9370c6cc6095172
+      internalID: -497029017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1676
+        width: 17
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5000014, y: 0.033427767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbc8aa7d8f7f4c4f900b9f2216b1652
+      internalID: 1896271420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1669
+        width: 19
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5707229, y: 0.021296691}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4747d78704d894ba8e0d733a43ef48
+      internalID: -714404917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_5
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1676
+        width: 28
+        height: 163
+      alignment: 9
+      pivot: {x: 0.26004955, y: 0.030107182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc520712203a3e54889165e7955770e9
+      internalID: 1186085807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 1658
+        width: 21
+        height: 166
+      alignment: 9
+      pivot: {x: 0.24405344, y: 0.030504342}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2c8e20b935bc9458e3d99dfe0338df
+      internalID: -1341860236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_7
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1657
+        width: 18
+        height: 205
+      alignment: 9
+      pivot: {x: 0.3880242, y: 0.031333365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 120659ebdf63c864e8037e292e64f9da
+      internalID: 293364580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_8
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 1638
+        width: 14
+        height: 109
+      alignment: 9
+      pivot: {x: 0.35603333, y: 0.0438714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f760801bbf1a64fa115984ef0cc186
+      internalID: 557799365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_9
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1643
+        width: 32
+        height: 208
+      alignment: 9
+      pivot: {x: 0.75195026, y: 0.021942725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905cb686c0d76574085832f80024b2b7
+      internalID: -362911263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_10
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1639
+        width: 19
+        height: 174
+      alignment: 9
+      pivot: {x: 0.60608554, y: 0.048228998}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ede3ad5cd8cce48b2efd7ccdb2a617
+      internalID: -1436953072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_11
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1635
+        width: 20
+        height: 173
+      alignment: 9
+      pivot: {x: 0.29844362, y: 0.026199253}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e82371d7706b840a485b9deb6f96c6
+      internalID: -1333148947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_12
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1628
+        width: 20
+        height: 189
+      alignment: 9
+      pivot: {x: 0.60078126, y: 0.030761072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c77af14f3f7d39e43b7d05c48dbc4576
+      internalID: 734844504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_13
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1632
+        width: 25
+        height: 227
+      alignment: 9
+      pivot: {x: 0.6075, y: 0.023479445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d32c6a099a90247bcd38ddde6ae11b
+      internalID: -1519895418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_14
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1651
+        width: 19
+        height: 195
+      alignment: 9
+      pivot: {x: 0.28783536, y: 0.03830817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e71aeca125504049b85a04875a83eb8
+      internalID: -562265499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_15
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 1629
+        width: 71
+        height: 59
+      alignment: 9
+      pivot: {x: 0.18158561, y: 0.144194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e603241d1efb9949aa1e2411701a324
+      internalID: 1666266932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_16
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 1070
+        width: 359
+        height: 591
+      alignment: 9
+      pivot: {x: 0.63496286, y: 0.044328667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59fd2e66264d9944d997eb8689d6c0ea
+      internalID: -1495049254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_17
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 1615
+        width: 80
+        height: 35
+      alignment: 9
+      pivot: {x: 0.8330566, y: 0.24624722}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f077d6684277e346a18e76de4bc64c7
+      internalID: -902128595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_18
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1188
+        width: 78
+        height: 204
+      alignment: 9
+      pivot: {x: 0.4277696, y: 0.9087345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a4957cce1b116841b46f5e51d3d311d
+      internalID: 375045980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_19
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1217
+        width: 301
+        height: 180
+      alignment: 9
+      pivot: {x: 0.505365, y: 0.59868366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f328dc6bce2473c489c1ef69ea5d9bd0
+      internalID: 119249761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_20
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 980
+        width: 126
+        height: 197
+      alignment: 9
+      pivot: {x: 0.15123312, y: 0.91753936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9450a300921d3ef46b53bffd888369f4
+      internalID: -758901350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weeds_21
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 921
+        width: 137
+        height: 219
+      alignment: 9
+      pivot: {x: 0.84543717, y: 0.9013198}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aaeb4f5d1205214fa41567dad083133
+      internalID: -520050914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9d72798c42da8544aa4c43d643d579e1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      weeds_0: -937928760
+      weeds_1: 1472669851
+      weeds_10: -1436953072
+      weeds_11: -1333148947
+      weeds_12: 734844504
+      weeds_13: -1519895418
+      weeds_14: -562265499
+      weeds_15: 1666266932
+      weeds_16: -1495049254
+      weeds_17: -902128595
+      weeds_18: 375045980
+      weeds_19: 119249761
+      weeds_2: -497029017
+      weeds_20: -758901350
+      weeds_21: -520050914
+      weeds_3: 1896271420
+      weeds_4: -714404917
+      weeds_5: 1186085807
+      weeds_6: -1341860236
+      weeds_7: 293364580
+      weeds_8: 557799365
+      weeds_9: -362911263
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

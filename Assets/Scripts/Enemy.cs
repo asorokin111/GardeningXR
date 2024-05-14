@@ -118,7 +118,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private void SetUpHealthBar()
     {
         _healthBar.transform.SetParent(_UICanvas.transform);
-        _healthBar.GetComponent<FaceCamera>().cameraToLookAt = _mainCamera;
+        _healthBar.GetComponent<FaceCamera>()._cameraToLookAt = _mainCamera;
         _healthBar.SetProgress(_health / _maxHealth);
     }
     #endregion  
