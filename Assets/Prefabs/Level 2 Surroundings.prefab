@@ -292,21 +292,79 @@ PrefabInstance:
     - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
         type: 3}
       propertyPath: _tutorialPhrasesList.Array.size
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
         type: 3}
       propertyPath: _tutorialPhrasesList.Array.data[0].text
-      value: Hi
+      value: Hei taas!
       objectReference: {fileID: 0}
     - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
         type: 3}
       propertyPath: _tutorialPhrasesList.Array.data[1].text
-      value: Example
+      value: "Teemme kukka-asetelmia t\xE4ll\xE4 tasolla!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[2].text
+      value: "P\xF6yd\xE4ll\xE4 n\xE4kyi vihre\xE4 juttu. Se on kukkavaahtoa."
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[3].text
+      value: Voit napata sen oikealla kontrollerilla.
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[4].text
+      value: "Hyv\xE4\xE4 ty\xF6t\xE4! Nyt katso p\xF6yd\xE4n oikealle puolelle,
+        siell\xE4 on laatikko t\xE4ynn\xE4 kauniita kukkia."
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[5].text
+      value: "Ota yksi kukka ja aseta se kukkavaahtoon. Katsotaan, mit\xE4 tapahtuu!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[6].text
+      value: "K\xE4yt\xE4 samaa tekniikkaa tehd\xE4ksesi kauniin kukka-asetelman."
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[7].text
+      value: Napsauta punaista painiketta, jos haluat uuden kukkavaahdon (vanhaa
+        ei poisteta).
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[8].text
+      value: Napsauta punaista painiketta, jos haluat uuden kukkavaahdon (vanhaa
+        ei poisteta).
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[4].isFillerText
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
         type: 3}
       propertyPath: _tutorialPhrasesList.Array.data[5].isFillerText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[6].isFillerText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[7].isFillerText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 498842733835699018, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      propertyPath: _tutorialPhrasesList.Array.data[8].isFillerText
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6731413656749221312, guid: e63c98a46aecf1d47bb32d51e397c2df,
@@ -368,8 +426,30 @@ PrefabInstance:
     - {fileID: 5090828292738482797, guid: e63c98a46aecf1d47bb32d51e397c2df, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7408654010665948560, guid: e63c98a46aecf1d47bb32d51e397c2df,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8753678712638494366}
   m_SourcePrefab: {fileID: 100100000, guid: e63c98a46aecf1d47bb32d51e397c2df, type: 3}
+--- !u!1 &6268776955059867868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7408654010665948560, guid: e63c98a46aecf1d47bb32d51e397c2df,
+    type: 3}
+  m_PrefabInstance: {fileID: 3472267602028119372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8753678712638494366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6268776955059867868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef2d2b381a384e4bbda6f49289a2cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7873754442489389196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6731413656749221312, guid: e63c98a46aecf1d47bb32d51e397c2df,

@@ -28,7 +28,7 @@ public class LevelManager : MonoBehaviour
         }
         catch
         {
-            Debug.LogError($"Scene Manager doesn't containd scene with name:level");
+            Debug.LogError($"Scene Manager doesn't contain scene with name:level");
         }
     }
 }
