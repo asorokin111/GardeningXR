@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &565942137707640774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5988112204318994927}
+  m_Layer: 4
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5988112204318994927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565942137707640774}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.506, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5720385581565333567}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1692753400679527141
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +155,7 @@ GameObject:
   - component: {fileID: 3088523065373705530}
   - component: {fileID: 4542803648201388388}
   - component: {fileID: 2949277896456108588}
+  - component: {fileID: 7379156748437141853}
   m_Layer: 4
   m_Name: Enemy
   m_TagString: WeedEnemy
@@ -145,6 +177,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1510958779017852328}
+  - {fileID: 5988112204318994927}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8733805866588022474
@@ -264,9 +297,30 @@ MonoBehaviour:
   _damageRadius: 3
   _damage: 10
   _damageFrequency: 1
+  _groundCheck: {fileID: 7379156748437141853}
   _jumpForce: 150
   _secondUntilNextJump: 1
   _secondUntilDeactivation: 5
+  _feet: {fileID: 5988112204318994927}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _jumpHeight: 10
+  _jumpLenght: 6
+  _gravityScale: 5
+--- !u!114 &7379156748437141853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605155775152099027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f82af0a605a5ff94190fb44663e925cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToCheck: 0.2
 --- !u!1 &3854093045703577838
 GameObject:
   m_ObjectHideFlags: 0

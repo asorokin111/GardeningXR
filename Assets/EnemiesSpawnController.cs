@@ -27,7 +27,7 @@ public class EnemiesSpawnController : MonoBehaviour
 
     private void Start()
     {
-        _enemiesPool = new ObjectPool<Enemy>(OnCreateEnemy, null, null, OnEnemyDestroy, false, 10, 40);
+        _enemiesPool = new ObjectPool<Enemy>(OnCreateEnemy, null, enemy => enemy.UnInitialize(), OnEnemyDestroy, false, 10, 40);
         _enemySpawnTime = new WaitForSeconds(_enemySpawnRate);
         StartCoroutine(Spawn());
     }

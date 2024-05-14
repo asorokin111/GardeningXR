@@ -4,63 +4,124 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    //Actions
+    private Action _onJumpAction;
     private Action<Enemy> _onDieAction;
+
+    //Components
+    private Transform _target;
+    private Canvas _UICanvas;
+    private Camera _mainCamera;
+
+    //Booleans 
+    private bool _isAttacking = false;
+    private bool _isJumping;
+    private bool _isInitialized;
+
+    //Coroutines
+    private Coroutine _currentCoroutine;
 
     [Header("Health & Damage")]
     [SerializeField] private ProgressBar _healthBar; //The UI object that will be places at a real Canvas to gain perfomance
     [SerializeField] private int _maxHealth;
-    private float _health;
+                     private float _health;
     [SerializeField] private float _damageRadius;
     [SerializeField] private int _damage;
-
     [SerializeField, Range(0f, 10f)] private int _damageFrequency;
-    private WaitForSeconds _waitToGiveDamage;
+                     private WaitForSeconds _waitToGiveDamage;
 
     [Header("Jumping")]
-    [SerializeField] private float _jumpForce;
+    [SerializeField] private EnemyGroundCheck _groundCheck;
     [SerializeField, Range(0f, 15f)] private int _secondUntilNextJump;
-    private static WaitForSeconds _waitForNextJump;
+                     private static WaitForSeconds _waitForNextJump;
+    [SerializeField] private float _jumpHeight;
+    [SerializeField] private float _jumpLenght;
+    [SerializeField] private float _gravityScale;
 
-    [Header("Deactivation Parameters")]
-    [SerializeField, Range(0f, 30f)] private int _secondUntilDeactivation;
+                     private float _Yvelocity;
+                     private float _Zvelocity;
 
-    private Rigidbody _rb;
+    private void Update()
+    {
+        if (!_isInitialized)
+            return;
 
-    private Transform _target;
+        if (_Yvelocity < -500f)
+        {
+            _onDieAction?.Invoke(this);
+            _isInitialized = false;
+        }
 
-    private Canvas _UICanvas;
-    private Camera _mainCamera;
+        if (_isAttacking)
+            return;
 
-    private bool _isGrounded;
-    private bool _isDetectingCollisions;
-    private bool _isAttacking;
+        _Yvelocity += Physics.gravity.y * _jumpLenght * Time.deltaTime;
+        _Zvelocity += _jumpLenght * Time.deltaTime;
 
+
+        if (_groundCheck.isGrounded && _Yvelocity < 0)
+        {
+            _Yvelocity = 0;
+            _Zvelocity = 0;
+            if(TryFindMainPlantNearby(out var mainPlantNearby))
+            {
+                StartCoroutine(DamageMainPlant());
+                return;
+            }
+
+            if(!_isJumping)
+            {
+                _isJumping = true;
+                StartCoroutine(Jump());
+            }
+        }
+
+        //Looking on the target
+        Vector3 toTarget = _target.position - transform.localPosition;
+        toTarget.y = 0;
+        transform.localRotation = Quaternion.LookRotation(toTarget);
+
+        transform.Translate(new Vector3(0, _Yvelocity, _Zvelocity) * Time.deltaTime);
+    }
+
+    #region Creation and Initialization
+    /// <summary>
+    /// Instead of Start() method
+    /// </summary>
+    /// <param name="target"></param>
     public void Create(Transform target)
     {
-        _rb = GetComponent<Rigidbody>();
+        _onJumpAction += () => StartCoroutine(Jump());
+
+        _mainCamera = Camera.main;
+        _UICanvas = GameObject.Find("World Optimization-Canvas").GetComponent<Canvas>();
         _target = target;
 
         _waitForNextJump = new WaitForSeconds(_secondUntilNextJump);
         _waitToGiveDamage = new WaitForSeconds(_damageFrequency);
-
-        _mainCamera = Camera.main;
-        _UICanvas = GameObject.Find("World Optimization-Canvas").GetComponent<Canvas>();
     }
+
     public void Initialize(Action<Enemy> action)
     {
+        _isInitialized = true;
         _onDieAction = action;
         _health = _maxHealth;
         SetUpHealthBar();
-
-        _isGrounded = true;
-        MakeAJump();
+        StartCoroutine(Jump());
     }
+
+    public void UnInitialize()
+    {
+        _isInitialized = false;
+    }
+
     private void SetUpHealthBar()
     {
         _healthBar.transform.SetParent(_UICanvas.transform);
         _healthBar.GetComponent<FaceCamera>().cameraToLookAt = _mainCamera;
         _healthBar.SetProgress(_health / _maxHealth);
     }
+    #endregion  
 
     public void TakeDamage(int amount)
     {
@@ -73,56 +134,12 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (!_isDetectingCollisions)
-            return;
-
-        if (collision.gameObject.CompareTag("WeedsGround"))
-        {
-            _isGrounded = true;
-            _isDetectingCollisions = false;
-            _rb.angularVelocity = Vector3.zero;
-            _rb.velocity = Vector3.zero;
-
-            if (TryFindMainPlantNearby(out MainPlant mainPlant))
-            {
-                StartCoroutine(DamageMainPlant());
-                return;
-            }
-
-            StartCoroutine(WaitUntilNextJump());
-        }
-        else
-        {
-            _isGrounded = false;
-            StartDeactivationCount();
-        }
-    }
-
     #region Jumping
-    private void MakeAJump()
-    {
-        transform.LookAt(_target);
-        AddForceAtAngle(_jumpForce);
-        _isDetectingCollisions = true;
-    }
-
-    IEnumerator WaitUntilNextJump()
+    IEnumerator Jump()
     {
         yield return _waitForNextJump;
-        MakeAJump();
-    }
-
-    private void AddForceAtAngle(float force)
-    {
-        //float zcomponent = Mathf.Tan(angle * Mathf.PI / 180) * force * 0.2f;
-        //float ycomponent = Mathf.Sin(angle * Mathf.PI / 180) * force * 0.8f;
-        //float xcomponent = Mathf.Cos(angle * Mathf.PI / 180) * force;
-        Vector3 averageVector = (transform.forward + transform.up) / 2;
-
-        _rb.AddForce(averageVector * force);
-        _isGrounded = false;
+        _Yvelocity = _jumpHeight;
+        _isJumping = false;
     }
     #endregion
 
@@ -151,7 +168,7 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             if (TryFindMainPlantNearby(out MainPlant mainPlant))
             {
-                Debug.Log("Found Plant");
+                Debug.Log("Attacking plant");
                 yield return _waitToGiveDamage;
                 mainPlant.TakeDamage(_damage);
             }
@@ -161,19 +178,7 @@ public class Enemy : MonoBehaviour, IDamageable
                 break;
             }
         }
-        StartCoroutine(WaitUntilNextJump());
-    }
-    IEnumerator StartDeactivationCount()
-    {
-        int i = 0;
-        while (i < _secondUntilDeactivation)
-        {
-            i++;
-            yield return new WaitForSeconds(1f);
-            if (_isGrounded)
-                yield break;
-        }
-        Destroy(gameObject);
+        StartCoroutine(Jump());
     }
 
     private void OnDrawGizmosSelected()
