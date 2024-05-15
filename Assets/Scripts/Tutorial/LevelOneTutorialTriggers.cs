@@ -1,4 +1,5 @@
 using Gardening;
+using System.Collections;
 using UnityEngine;
 
 public class LevelOneTutorialTriggers : MonoBehaviour
@@ -48,8 +49,14 @@ public class LevelOneTutorialTriggers : MonoBehaviour
         if (_currentState == desiredState)
         {
             ++_currentState;
-            NextPhrase();
+            StartCoroutine(TriggerPhrase());
         }
+    }
+
+    private IEnumerator TriggerPhrase()
+    {
+        yield return new WaitUntil(() => SceneTutorial.instance.nextIsTrigger);
+        NextPhrase();
     }
 
     private void NextPhrase()
