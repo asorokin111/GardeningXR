@@ -1,8 +1,6 @@
 using Gardening;
-using System.Collections;
-using UnityEngine;
 
-public class LevelOneTutorialTriggers : MonoBehaviour
+public class LevelOneTutorialTriggers : TutorialTriggers
 {
     private enum TutorialStates
     {
@@ -11,8 +9,6 @@ public class LevelOneTutorialTriggers : MonoBehaviour
         SeedPlanted = 2,
         PlantGrown = 3,
     }
-
-    private int _currentState = (int)TutorialStates.InitialState;
 
     private void OnEnable()
     {
@@ -42,25 +38,5 @@ public class LevelOneTutorialTriggers : MonoBehaviour
     {
         CheckStateAndPrintNext((int)TutorialStates.PlantGrown - 1);
         GameManager.Instance.ChangeGameState(GameState.Win);
-    }
-
-    private void CheckStateAndPrintNext(int desiredState)
-    {
-        if (_currentState == desiredState)
-        {
-            ++_currentState;
-            StartCoroutine(TriggerPhrase());
-        }
-    }
-
-    private IEnumerator TriggerPhrase()
-    {
-        yield return new WaitUntil(() => SceneTutorial.instance.nextIsTrigger);
-        NextPhrase();
-    }
-
-    private void NextPhrase()
-    {
-        StartCoroutine(SceneTutorial.instance.PrintNextPhrase());
     }
 }
